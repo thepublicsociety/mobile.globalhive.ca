@@ -1,0 +1,67 @@
+.panel-image
+  .item-header{class: "subcat-#{@item.subcategory}", style: "background-color: #{to_rgba(@item.panel.color, "8")}"}
+    .header-icon
+    %h3.light
+      .en
+        = @item.title
+      .fr
+        = @item.title_french
+  .item-contents
+    .related-modules
+      %h4
+        .en
+          Related Modules
+        .fr
+          Modules Connexes
+      %ul.unstyled.related
+        - @related.each do |m|
+          %li{class: "#{m.subcategory} #{@item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+            .icon
+            .title
+              %a{href: "/explore?focus=#{m.id.to_s}"}
+                %span.en
+                  = m.title
+                %span.fr
+                  = m.title_french
+      .hub-link{class: "#{@item.subcategory} #{@item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+        %a{href: "/hub/#{@item.panel.id.to_s}", class: "hublink"}
+          .en
+            See the full 
+            = @item.panel.name
+            Knowledge Hub
+          .fr
+            Voir le texte complet
+            = @item.panel.name_french.html_safe
+            Knowledge Pôle
+    .module
+      .expanded-image
+        - unless @item.itemphoto.path.blank?
+          .photo-window{style: "overflow: hidden; height: 254px; width: 696px"}
+            %img{src: @item.itemphoto.blank? ? "/assets/empty.png" : @item.itemphoto.url(:display), style: "position: relative; top: -#{@item.i_p_crop_y}px; width: 100%;"}
+          .img-caption
+            .en
+              = @item.i_p_caption.blank? ? "" : @item.i_p_caption
+            .fr
+              = @item.i_p_caption_french.blank? ? "" : @item.i_p_caption_french
+      .item-text{style: "background-color: #{to_rgba(@item.panel.color, "8")}"}
+        .en
+          = @item.body.blank? ? "" : @item.body.html_safe
+        .fr
+          = @item.body_french.blank? ? "" : @item.body_french.html_safe
+  .item-footer
+    .social
+      .twitter{class: @item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+        .en
+          %a{href: "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}&text=Tools%20for%20Engaging%20Global%20Citizens&url=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}&via=Hive_Ruche", target: "_blank"}
+        .fr
+          %a{href: "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}&text=Outils%20d%E2%80%99engagement%20pour%20citoyens%20du%20monde&url=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}&via=Hive_Ruche", target: "_blank"}
+      .facebook{class: @item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+        .en
+          %a{href: "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}", target: "_blank"}
+        .fr
+          %a{href: "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fruchemondiale.ca%2Fexplore%3Ffocus%3D#{@item.id.to_s}", target: "_blank"}
+    .actions
+      .direct-link{class: @item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+        %a{href: "/explore?focus=#{@item.id}"}
+      .minus{class: @item.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+        %a{href: "#"}

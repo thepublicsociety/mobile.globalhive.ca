@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title><%= title %></title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="<%= metatag %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application" %>
+  <!--[if lt IE 9]>
+    <link type="text/css" rel="stylesheet" href="/css/ie.css">
+  <![endif]-->
+  <!--[if !IE 7]>
+  	<style type="text/css">
+  		#wrap {display:table;height:100%}
+  	</style>
+  <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    if (typeof jQuery == 'undefined') {
+      document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+  <%= javascript_include_tag "application" %>
+  <% if controller.action_name == "edit" || controller.action_name == "new" %>
+    <%= render :partial => "layouts/tinymce" %>
+  <% end %>
+  <!--[if lt IE 9]>
+    <script src="/javascripts/selectivizr-min.js"></script>
+    <script src="/javascripts/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
+</head>
+<body class="en <%= user_signed_in? ? "authenticated" : "unauthenticated" %> <%= controller.controller_name %> <%= controller.controller_name %>-<%= controller.action_name %> <%= bodyclass %>">
+  <div class="messages">
+    <div class="msg"><%= notice %><%= alert %></div>
+  </div>
+  <div id="wrapper">
+    <div class='innerWrapper'><%= yield %></div>
+  </div>
+  <script>
+    console.log("<%= Rails.env %>");
+  </script>
+</body>
+</html>

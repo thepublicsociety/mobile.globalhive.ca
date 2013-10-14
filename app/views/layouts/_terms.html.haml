@@ -1,0 +1,15 @@
+- @terms.each do |term|
+  %li.the-term
+    .term-title
+      %h2
+        %span.en
+          = term.name
+        %span.fr
+          = term.name_french.blank? ? "" : term.name_french.html_safe
+        = edit_if_admin("Term", term.id)
+    .term-definition
+      .en
+        = term.definition.blank? ? "" : term.definition.html_safe
+      .fr
+        = term.definition_french.blank? ? "" : term.definition_french.html_safe
+= will_paginate @terms, renderer: BootstrapPagination::Rails, bootstrap: 3

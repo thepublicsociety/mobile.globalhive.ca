@@ -1,0 +1,22 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: thisPage}
+            .page-rect
+              %h1
+                .en
+                  News
+                .fr
+                  Nouvelles
+            .post-listing
+              %ul.unstyled.the-posts
+                = render partial: "layouts/posts"
+
+= render partial: "layouts/footer"

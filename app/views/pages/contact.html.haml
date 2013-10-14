@@ -1,0 +1,141 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: thisPage}
+            .page-rect
+              %h1
+                .en
+                  Contact
+                .fr
+                  Nous contacter
+            .contact-wrapper
+              .contact-section.left
+                .contact-text.en
+                  %p
+                    For information and inquiries about The Global Hive or the Inter-Council Network, please contact:   
+                  %p
+                    ICN National Coordinator/Coordonnatrice nationale du RCCOntario Council for International Cooperation
+                .contact-text.fr
+                  %p
+                    Pour de plus amples renseignements au sujet de la Ruche mondiale du Réseau, prendre contact avec :
+                  %p
+                    ICN National Coordinator/Coordonnatrice nationale du RCCOntario Council for International Cooperation
+                .contact-info
+                  .name
+                    Sarah Power
+                  .address
+                    344 Bloor Street West, Suite 209
+                    %br
+                    Toronto ON M5S 3A7
+                  .phone
+                    T: 416.972.6303 | F: 416.972.6996
+                  .links
+                    = link_to "www.ocic.on.ca/icn", "http://www.ocic.on.ca/icn"
+                    \|
+                    = link_to "icn.rcc@ocic.on.ca", "http://icn.rcc@ocic.on.ca"
+              .contact-section
+                .contact-text
+                  %p.en
+                    To get in touch with your Provincial or Regional Council for International Cooperation, please contact:
+                  %p.fr
+                    Pour entrer en contact avec votre conseil provincial ou régional de coopération internationale, veuillez vous adresser à :
+                  %p
+                    Alberta Council for Global Cooperation (ACGC)
+                .contact-info
+                  .name
+                    Heather McPherson
+                  .phone
+                    (780) 988.0200
+                  .links
+                    = link_to "www.acgc.ca", "http://www.acgc.ca"
+              .smallerboxes
+                .contact-box
+                  .contact-text
+                    %p
+                      L’Association québécoise des 
+                      organismes de coopération 
+                      internationale (AQOCI)
+                  .contact-info
+                    .name
+                      Gervais L’Heureux
+                    .phone
+                      (514) 871.1086
+                    .links
+                      = link_to "www.aqoci.qc.ca", "http://www.aqoci.qc.ca"
+      
+                .contact-box
+                  .contact-text
+                    %p
+                      Atlantic Council for 
+                      International Cooperation 
+                      (ACIC)
+                  .contact-info
+                    .name
+                      Carolyn Whiteway
+                    .phone
+                      (902) 431.2311
+                    .links
+                      = link_to "www.acic-caci.org", "http://www.acic-caci.org"
+      
+                .contact-box.last
+                  .contact-text
+                    %p
+                      British Columbia Council for International Cooperation (BCCIC)
+                  .contact-info
+                    .name
+                      Shams Alibhai
+                    .phone
+                      (604) 899.4475
+                    .links
+                      = link_to "www.bccic.ca", "http://www.bccic.ca"
+                .clear
+                .contact-box
+                  .contact-text
+                    %p
+                      Manitoba Council for 
+                      International Cooperation 
+                      (MCIC)
+                  .contact-info
+                    .name
+                      Janice Hamilton
+                    .phone
+                      (204) 987.6420
+                    .links
+                      = link_to "www.mcic.ca", "http://www.mcic.ca"
+      
+                .contact-box
+                  .contact-text
+                    %p
+                      Ontario Council for 
+                      International Cooperation 
+                      (OCIC)
+                  .contact-info
+                    .name
+                      Kimberly Gibbons
+                    .phone
+                      (416) 972.6303
+                    .links
+                      = link_to "www.ocic.on.ca", "http://www.ocic.on.ca"
+      
+                .contact-box.last
+                  .contact-text
+                    %p
+                      Saskatchewan Council for 
+                      International Cooperation 
+                      (SCIC)
+                  .contact-info
+                    .name
+                      Vicki Nelson
+                    .phone
+                      (306) 757.4669
+                    .links
+                      = link_to "www.earthbeat.sk.ca/", "http://www.earthbeat.sk.ca/"
+
+= render partial: "layouts/footer"

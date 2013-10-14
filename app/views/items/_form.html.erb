@@ -1,0 +1,73 @@
+<%= simple_nested_form_for(@item, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <!--<%= f.input :name %>-->
+    <%= f.input :title %>
+    <%= f.input :title_french, as: "string" %>
+    <%= f.input :feature_title, label: "Feature Title (use this for the homepage featured items header title)" %>
+    <%= f.input :feature_title_french, label: "Feature Title French" %>
+    <%= f.input :body, label: "Expanded entry body copy" %>
+    <%= f.input :body_french %>
+    <!--<%= f.input :description %>-->
+    <%= f.label :panel_id, "Category, Subcategory, and French Subcategory" %>
+    <div class="clear"></div>
+    <% if controller.action_name == "edit" && !@item.panel.blank? %>
+      <%= f.select("panel_id", options_from_collection_for_select(@panels, "id", "name", @item.panel.id), :include_blank => true) %>
+    <% else %>
+      <%= f.select("panel_id", options_from_collection_for_select(@panels, "id", "name"), :prompt => "Select Category") %>
+    <% end %>
+    <%= f.collection_select :subcategory, [["context", "Context"], ["good-practices", "Good Practices"], ["tools", "Tools"], ["case-studies", "Case Studies"], ["resources", "Resources"], ["webinars", "Webinars"]], :first, :last %>
+    <%= f.collection_select :subcategory_french, [["contexte", "Contexte"], ["principe", "Principe"], ["outil", "Outil"], ["cas", "Cas"], ["ressources", "Ressources"], ["webinars", "Webinars"]], :first, :last %>
+    <div class="clear"></div>
+    <%= f.label :related_modules, "Related Modules" %>
+    <%= select_tag("related_modules_select", options_from_collection_for_select(@items, "id", "title"), :prompt => "Select Related") %>
+    <% if controller.action_name == "edit" %>
+      <div class="selected-modules"><span class='label'>Selected:</span>
+        <% @related.each do |r| %> 
+          <%= "<span class='selected-mod btn btn-default btn-xs #{r.id.to_s}'>#{r.title}<span class='removemod'>&times;</span></span>".html_safe %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="selected-modules"><span class='label'>Selected:</span></div>
+    <% end %>
+    <%= f.input :related_modules, as: "hidden" %>
+    <div class="nested-form-inputs">
+      <%= f.simple_fields_for :item_attachments do |a| %>
+        <% if controller.action_name == "edit" %>
+          <div class='image-preview'>
+            <%= image_tag(a.object.item_image.url(:thumb)) %>
+          </div>
+        <% end %>
+        <%= a.input :item_image %>
+        <%= a.input :caption, as: "string", :label => "Caption" %>
+        <%= a.input :caption_french, as: "string", :label => "Caption French" %>
+        <%= a.link_to_remove "remove", style: "margin-top: -15px; display: block;" %>
+        <div style="height: 25px"></div>
+      <% end %>
+      <div style="height: 10px"></div>
+      <%= f.link_to_add "Add Photo", :item_attachments, class: "btn btn-default btn-xs" %>
+    </div>
+    <div style="height: 25px"></div>
+    <%= f.input :itemphoto, label: "Focus Photo" %>
+    <% if controller.action_name == "edit" %>
+      <div class='image-preview' style='display: none'>
+        <%= image_tag(@item.itemphoto.url) %>
+      </div>
+    <% end %>
+    <%= f.input :i_p_caption, label: "Focus Photo Caption" %>
+    <%= f.input :i_p_caption_french, label: "Focus Photo Caption French" %>
+    <div style="height: 25px"></div>
+    <div class="form-select">
+      <%= f.label :size, "Panel size" %>
+      <div class="clear"></div>
+      <%= f.collection_select :size, [["", "Select Size"], ["large", "Large"], ["small", "Small"], ["wide", "Wide"], ["tall", "Tall"]], :first, :last %>
+    </div>
+    <%= f.input :featured %>
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

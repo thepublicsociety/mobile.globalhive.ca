@@ -1,0 +1,60 @@
+-#
+  .isotope-container{class: "isotope-container-#{thisPage}"}
+    #items
+      - @items.shuffle.each do |i|
+        - unless i.panel.blank?
+          .item.story-link{id: "itemId-#{i.id.to_s}", data: {htitle: i.title, cat: i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and"), subcat: i.subcategory}, class: "#{i.size.blank? ? "large" : i.size} #{i.subcategory} #{i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+            .item-hover{style: "background-color: #{to_rgba(i.panel.color, "8")}"}
+              .item-header{class: "subcat-#{i.subcategory}", style: "background-color: #{to_rgba(i.panel.color, "8")}"}
+                .header-icon
+                %h3.light.story-title
+                  %span.en
+                    = i.title
+                  %span.fr
+                    = i.title_french
+              .item-excerpt
+                .en
+                  = i.body.blank? ? "" : i.body.truncate_html(i.size == "small" ? 50 : i.size == "wide" ? 250 : i.size == "large" ? 800 : i.size == "tall" ? 240 : 800, at_end = "&hellip;").html_safe
+                .fr
+                  = i.body_french.blank? ? "" : i.body_french.truncate_html(i.size == "small" ? 50 : i.size == "wide" ? 250 : i.size == "large" ? 800 : i.size == "tall" ? 240 : 800, at_end = "&hellip;").html_safe
+              .item-footer
+                .social
+                  .twitter{class: i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+                    .en
+                      %a{href: "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}&text=Tools%20for%20Engaging%20Global%20Citizens&url=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}&via=Hive_Ruche", target: "_blank"}
+                    .fr
+                      %a{href: "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}&text=Outils%20d%E2%80%99engagement%20pour%20citoyens%20du%20monde&url=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}&via=Hive_Ruche", target: "_blank"}
+                  .facebook{class: i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+                    .en
+                      %a{href: "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fglobalhive.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}", target: "_blank"}
+                    .fr
+                      %a{href: "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fruchemondiale.ca%2Fexplore%3Ffocus%3D#{i.id.to_s}", target: "_blank"}
+                .actions
+                  .plus{class: i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+                    %a{href: "#"}
+            .panel-image
+              .item-header{class: "subcat-#{i.subcategory}", style: "background-color: #{to_rgba(i.panel.color, "8")}"}
+                .header-icon
+                %h3.light.story-title
+                  %span.en
+                    = i.title
+                  %span.fr
+                    = i.title_french
+              - unless i.item_attachments.blank?
+                - if i.size == "large"
+                  = image_tag(i.item_attachments.blank? ? "/assets/empty.png" : i.item_attachments.last.item_image.url(:large))
+                - elsif i.size == "tall"
+                  = image_tag(i.item_attachments.blank? ? "/assets/empty.png" : i.item_attachments.last.item_image.url(:tall))
+                - elsif i.size == "small"
+                  = image_tag(i.item_attachments.blank? ? "/assets/empty.png" : i.item_attachments.last.item_image.url(:small))
+                - elsif i.size == "wide"
+                  = image_tag(i.item_attachments.blank? ? "/assets/empty.png" : i.item_attachments.last.item_image.url(:wide))
+                - else
+                  = image_tag(i.item_attachments.blank? ? "/assets/empty.png" : i.item_attachments.last.item_image.url(:large))
+              - if i.item_attachments.blank?
+                .item-text{style: "background-color: #{to_rgba(i.panel.color, "8")}"}
+                  .en
+                    = i.body.blank? ? "" : i.body.truncate_html(i.size == "small" ? 120 : i.size == "wide" ? 300 : i.size == "large" ? 740 : i.size == "tall" ? 280 : 740, at_end="&hellip;").html_safe
+                  .fr
+                    = i.body_french.blank? ? "" : i.body_french.truncate_html(i.size == "small" ? 120 : i.size == "wide" ? 300 : i.size == "large" ? 740 : i.size == "tall" ? 280 : 740, at_end="&hellip;").html_safe
+                    

@@ -1,0 +1,8 @@
+- @terms.each do |term|
+  %li.the-term
+    .term-title
+      %h2
+        = term.name
+        = edit_if_admin("Term", term.id)
+    .term-definition
+      = term.definition.blank? ? "" : term.definition.html_safe

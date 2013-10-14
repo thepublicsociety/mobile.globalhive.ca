@@ -1,0 +1,25 @@
+- @posts.each do |post|
+  %li.the-post
+    .meta-info
+      .post-author
+        = post.author.blank? ? "No Author" : post.author
+      .post-created-at
+        = date_string(post.created_at)
+    .post-info
+      - unless post.post_attachments.where("caption=?", "main").blank?
+        .post-photo
+          = image_tag(post.post_attachments.where("caption=?", "main").first.post_image.url)
+      .post-text{class: post.post_attachments.where("caption=?", "main").blank? ? "no-photo" : "with-photo"}
+        .post-title
+          %h2
+            %span.en
+              = link_to post.title, "/news/#{URI::encode(post.title)}"
+            %span.fr
+              = link_to post.title_french.blank? ? "" : post.title_french.html_safe, "/news/#{URI::encode(post.title)}"
+            = edit_if_admin("Post", post.id)
+        .post-body
+          .en
+            = post.body.blank? ? "No content" : post.body.gsub(/\{(.*)\}/, "").truncate_html(380, at_end="&hellip;").html_safe
+          .fr
+            = post.body_french.blank? ? "No content" : post.body_french.gsub(/\{(.*)\}/, "").truncate_html(370, at_end="&hellip;").html_safe
+= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3

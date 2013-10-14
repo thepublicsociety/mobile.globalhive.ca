@@ -1,0 +1,52 @@
+var $container = $("#items");
+$(".photo, .panels").hide();
+$(".content-type, .content-type a, .polygons li, .polygons a").addClass("on");
+var catArray = [];
+$(".polygons").find("li.on").each(function(){
+	var acat = $(this).find("a").data("category");
+	catArray.push(acat);
+});
+var subcatArray = [];
+$(".content-types").find("a.on").each(function(){
+	var acat = $(this).data("subcategory");
+	subcatArray.push(acat);
+});
+var allcats = [];
+if(catArray.length == 0){
+	for(var c=0; c < subcatArray.length; c++){
+	  var newcat = "."+subcatArray[c];
+	  allcats.push(newcat);
+	}
+} else {
+	for(var i=0; i < catArray.length; i++){
+		for(var c=0; c < subcatArray.length; c++){
+		  var newcat = "."+catArray[i]+"."+subcatArray[c];
+		  allcats.push(newcat);
+		}
+	}
+}
+var catsubs = allcats.join(", ");
+catsubs == "" ? catsubs = ".nothing" && $(".isotope-container-home").animate({"margin-bottom": "0px"}, 200) : catsubs = catsubs;
+$container.isotope({
+	filter: catsubs
+});
+
+var id = "<%= j(@item.id.to_s) %>";
+var klass = $("#itemId-"+id).attr("class");
+var left = $("#itemId-"+id).offset().left - $("#items").offset().left;
+//var top = $("#itemId-"+id).offset().top - $("#items").offset().top;
+var top = 0;
+$("#itemId-"+id).append("<div id='expandedItemId-"+id+"' class='expansion "+klass.replace("item", "")+"'><div class='loading'></div></div>");
+
+
+$(".isotope-container").prepend($("#expandedItemId-<%= j(@item.id.to_s) %>"));
+$("#expandedItemId-<%= j(@item.id.to_s) %>").animate({"width": "974px", "min-height": "721px"}, 200, function(){
+	$(this).css({"background":"#<%= j(@item.panel.color) %>","position":"absolute","z-index":"9","top":(<%= j(@top) %>+4)+"px","left":"<%= j(@left) %>px"});
+	$("#items .item").each(function(){
+		$(this).append("<div class='item-darkener'></div>");
+	});
+	$(this).html("<%= j(render partial: "layouts/expanded") %>");
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-header").css("background", "#"+shadeColor("<%= j(@item.panel.color) %>", "-15"));
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-footer").css("background", "#"+shadeColor("<%= j(@item.panel.color) %>", "-15"));
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-contents").mCustomScrollbar({scrollInertia:150});
+});

@@ -1,0 +1,44 @@
+
+<% content_for (:head) do %>
+<link type="text/css" rel="stylesheet" href="/css/jquery.Jcrop.min.css">
+<script src="/javascripts/jquery.Jcrop.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#cropbox').Jcrop({
+      onChange: update_crop,
+      onSelect: update_crop
+    });
+  });
+  function update_crop(coords) {
+    var rx = 100/coords.w;
+    var ry = 100/coords.h;
+    $('#preview').css({
+      width: Math.round(rx * <%= @item.itemphoto_geometry(:large).width %>) + 'px',
+      height: Math.round(ry * <%= @item.itemphoto_geometry(:large).height %>) + 'px',
+      marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+      marginTop: '-' + Math.round(ry * coords.y) + 'px'
+    });
+
+    var ratio = <%= @item.itemphoto_geometry(:original).width %> / <%= @item.itemphoto_geometry(:large).width %>; 
+    $('#crop_x').val(Math.floor(coords.x * ratio));
+    $('#crop_y').val(Math.floor(coords.y * ratio));
+    $('#crop_w').val(Math.floor(coords.w * ratio));
+    $('#crop_h').val(Math.floor(coords.h * ratio));  
+    $('#o_width').val("<%= @item.itemphoto_geometry(:original).width %>");  
+    $('#o_height').val("<%= @item.itemphoto_geometry(:original).height %>");  
+  }
+</script>
+<% end %>
+<div class='cropcontainer' style='padding: 50px'>
+<%= image_tag @item.itemphoto.url(:large), :size => "600x300", :id => "cropbox" %>
+<div style="width: 200px; height: 100px; overflow: hidden">
+
+</div>
+
+<%= form_for @item do |form| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h, :o_width, :o_height] %>
+    <%= form.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= form.submit "Crop" %></p>
+<% end %>
+</div>

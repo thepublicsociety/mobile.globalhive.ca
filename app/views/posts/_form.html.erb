@@ -1,0 +1,33 @@
+<%= simple_nested_form_for(@post, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :title_french, as: "string" %>
+    <%= f.input :author %>
+    <%= f.input :body %>
+    <%= f.input :body_french %>
+    <div class="nested-form-inputs">
+      <%= f.simple_fields_for :post_attachments do |a| %>
+        <% if controller.action_name == "edit" %>
+          <div class='image-preview'>
+            <%= image_tag(a.object.post_image.url(:thumb)) %>
+          </div>
+        <% end %>
+        <%= a.input :post_image %>
+        <%= a.input :caption, as: "string", :label => "Caption <span class='small-text'>(use 'main' for primary image. Surround the caption in {}'s to indicate placement in body)</span>" %>
+        <%= a.link_to_remove "remove", style: "margin-top: -15px; display: block;" %>
+        <div style="height: 25px"></div>
+      <% end %>
+      <div style="height: 10px"></div>
+      <%= f.link_to_add "Add Photo", :post_attachments, class: "btn btn-default btn-xs" %>
+    </div>
+    <div style="height: 25px"></div>
+    <!--<%= f.input :date %>-->
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

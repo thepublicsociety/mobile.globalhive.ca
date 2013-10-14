@@ -1,0 +1,11 @@
+$(".isotope-container").prepend($("#expandedItemId-<%= j(@item.id.to_s) %>"));
+$("#expandedItemId-<%= j(@item.id.to_s) %>").animate({"width": "974px", "min-height": "721px"}, 200, function(){
+	$(this).css({"background":"#<%= j(@item.panel.color) %>","position":"absolute","z-index":"9","top":(<%= j(@top) %>+4)+"px","left":"<%= j(@left) %>px"});
+	$("#items .item").each(function(){
+		$(this).append("<div class='item-darkener'></div>");
+	});
+	$(this).html("<%= j(render partial: "layouts/expanded") %>");
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-header").css("background", "#"+shadeColor("<%= j(@item.panel.color) %>", "-15"));
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-footer").css("background", "#"+shadeColor("<%= j(@item.panel.color) %>", "-15"));
+	$("#expandedItemId-<%= j(@item.id.to_s) %>").find(".item-contents").mCustomScrollbar({scrollInertia:150});
+});

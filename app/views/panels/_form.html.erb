@@ -1,0 +1,33 @@
+<%= simple_nested_form_for(@panel, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :name_french %>
+    <!--<%= f.input :title %>-->
+    <!--<%= f.input :category %>-->
+    <!--<%= f.input :subcategory %>-->
+    <%= f.input :color, placeholder: "6 digit hex format only" %>
+    <!--<%= f.input :body %>-->
+    <!--<%= f.input :description %>-->
+    <!--<%= f.input :featured %>-->
+    <%= f.input :active %>
+    <!--<div class="nested-form-inputs">
+      <%= f.simple_fields_for :panel_attachments do |a| %>
+        <%= a.input :panel_image, :label => "Image <span class='small-text'>(insert {image=[FILENAME]} where the image should appear within the body)</span>" %>
+        <% if controller.action_name == "edit" %>
+          <div class='image-preview'>
+            <%= image_tag(a.object.panel_image.url(:thumb)) %>
+          </div>
+        <% end %>
+        <%= a.link_to_remove "remove" %>
+      <% end %>
+    <%= f.link_to_add "Add Photo", :panel_attachments %>
+    </div>-->
+    <%= f.input :pdf %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .expansion.single
+            = render partial: "layouts/expanded"
+
+= render partial: "layouts/footer"
+:javascript
+  $(function(){
+    $(".expansion").css({"background":"##{@item.panel.color}","z-index":"9"});
+    $(".expansion").find(".item-header").css("background", "#"+shadeColor("#{@item.panel.color}", "-15"));
+  	$(".expansion").find(".item-footer").css("background", "#"+shadeColor("#{@item.panel.color}", "-15"));
+  	$(".expansion").find(".item-contents").mCustomScrollbar({scrollInertia:150});
+  });

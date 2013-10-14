@@ -1,0 +1,36 @@
+#wrap
+  #main
+    .container
+      .row
+        .col-lg-12
+          = image_tag("/assets/branding.png")
+          .page-contents{class: "#{thisPage} #{@panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+            .page-rect
+              %h1
+                .en
+                  = @panel.name
+                .fr
+            - unless @panel.pdf.path.blank?
+              - if File.exists?(@panel.pdf.path)
+                .hub-pdf{class: "#{@panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+            .hub-item-listing
+              - @panelitems.each do |item|
+                - unless item.body.blank?
+                  %article.panel-item{class: item.subcategory}
+                    %header.panel-item-header
+                      %h1
+                        .en
+                          = item.title
+                        .fr
+                      .item-sub{class: item.subcategory}
+                        .icon
+                        .text
+                          .en
+                            = item.subcategory.blank? ? "" : item.subcategory.gsub(/-/, " ").gsub("and", "&")
+                          .fr
+                    %section.panel-item-content
+                      .en
+                        = item.body.blank? ? "" : item.body.html_safe
+                      .fr
+                
+

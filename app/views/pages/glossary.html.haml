@@ -1,0 +1,54 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: thisPage}
+            .page-rect
+              %h1
+                .en
+                  Glossary
+                .fr
+                  Glossaire
+            .term-alphabets
+              %ul.unstyled
+                %li
+                  %a.en.on.selectAll{href: "#", data: {range: "a-z"}}
+                    ALL
+                  %a.fr.on.selectAll{href: "#", data: {range: "a-z"}}
+                    Tous
+                %li
+                  %a.selectRange{href: "#", data: {range: "a-d"}}
+                    A-D
+                %li
+                  %a.selectRange{href: "#", data: {range: "e-h"}}
+                    E-H
+                %li
+                  %a.selectRange{href: "#", data: {range: "i-l"}}
+                    I-L
+                %li
+                  %a.selectRange{href: "#", data: {range: "m-p"}}
+                    M-P
+                %li
+                  %a.selectRange{href: "#", data: {range: "q-u"}}
+                    Q-U
+                %li
+                  %a.selectRange{href: "#", data: {range: "v-z"}}
+                    V-Z
+                
+            .term-listing
+              %ul.unstyled.the-terms
+                = render partial: "layouts/terms"
+            .term-bottom
+              .en
+                %p
+                  If you see terms in this toolkit that you would like to see added to the glossary, please get in touch with ICN National Coordinator Sarah Power at icn.rcc@ocic.on.ca.
+              .fr
+                %p
+                  Si vous trouvez dans la Bo&#238;te &#224; outils des termes que vous aimeriez voir ajout&#233;s au glossaire, veuillez en informer la coordonnatrice nationale du RCC, Sarah Power, &#224; l&#8217;adresse icn.rcc@ocic.on.ca.
+= render partial: "layouts/footer"

@@ -1,0 +1,30 @@
+<tr>
+    <!--<th>Name</th>-->
+    <th class='arrangeBy' data-by='title'>Title</th>
+    <th>Body</th>
+    <!--<th>Description</th>-->
+    <th class='arrangeBy' data-by='category'>Category</th>
+    <th class='arrangeBy' data-by='subcategory'>Subcategory</th>
+    <th>Related modules</th>
+    <th>Featured</th>
+    <th>Active</th>
+    <th>Panel size</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @items.each do |item| %>
+  <tr>
+    <!--<td><%= item.name %></td>-->
+    <td><%= item.title %></td>
+    <td><%= item.body.blank? ? "" : item.body.truncate_html(100, at_end = "&hellip;").html_safe %></td>
+    <!--<td><%= item.description.blank? ? "" : item.description.truncate_html(100, at_end = "&hellip;").html_safe %></td>-->
+    <td><%= item.panel.blank? ? "" : item.panel.name %></td>
+    <td><%= item.subcategory %></td>
+    <td><% Item.find(item.related_modules.blank? ? [] : item.related_modules.split(",").collect(&:strip)).each do |r| %><%= "#{r.title}, " %><% end %></td>
+    <td><%= item.featured %></td>
+    <td><%= item.active %></td>
+    <td><%= item.size %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

@@ -1,0 +1,51 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: thisPage}
+            .page-rect
+              %h1
+                .en
+                  About
+                .fr
+                  &Agrave; propos
+            .section-nav
+              %ul.unstyled
+                - @sections.each do |sec|
+                  %li
+                    %span.en
+                      = link_to sec.title, "#section#{sec.id.to_s}"
+                    %span.fr
+                      = link_to sec.title_french.blank? ? "" : sec.title_french.html_safe, "#section#{sec.id.to_s}"
+            .section-listing
+              %ul.unstyled.the-sections
+                - @sections.each do |section|
+                  %li.the-section{id: "section#{section.id.to_s}"}
+                    .section-title
+                      %h2
+                        %span.en
+                          = section.title
+                        %span.fr
+                          = section.title_french
+                        = edit_if_admin("Section", section.id)
+                    .section-body
+                      .en
+                        = section.body.blank? ? "" : section.body.html_safe
+                      .fr
+                        = section.body_french.blank? ? "" : section.body_french.html_safe
+            .cida
+              %p.en
+                This initiative was undertaken with the financial support of the Government of Canada, through the development side of Foreign Affairs, Trade and Development Canada (DFATD)
+              %p.fr
+                Ce projet a &eacute;t&eacute; entrepris gr&acirc;ce &agrave; l'aide financi&egrave;re du Gouvernement du Canada par l'entremise d'Affaires &eacute;trang&egrave;res, Commerce et D&eacute;veloppement Canada (MAECD).
+              .cida-image
+                = image_tag("/assets/cida.jpg")
+
+= render partial: "layouts/footer"
+

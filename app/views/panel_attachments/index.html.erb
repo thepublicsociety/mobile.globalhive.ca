@@ -1,0 +1,23 @@
+<h1>Listing panel_attachments</h1>
+
+<table>
+  <tr>
+    <th>Caption</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @panel_attachments.each do |panel_attachment| %>
+  <tr>
+    <td><%= panel_attachment.caption %></td>
+    <td><%= link_to 'Show', panel_attachment %></td>
+    <td><%= link_to 'Edit', edit_panel_attachment_path(panel_attachment) %></td>
+    <td><%= link_to 'Destroy', panel_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Panel attachment', new_panel_attachment_path %>

@@ -1,0 +1,2197 @@
+.catselect
+  padding: 10px
+  a,
+  a:hover
+    color: white
+  .title
+    font-size: 18px
+.cat-select, .subcat-select
+  margin: 0 0 20px
+  select
+    width: 100%
+.mod-results li, .subcat-select
+  display: none
+.pages-hub
+  .subcat-select
+    display: block
+.pointer
+  display: none
+
+@font-face
+  font-family: 'symbols'
+  src: url('/fonts/icomoon.eot')
+  src: url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('/fonts/icomoon.woff') format('woff'), url('/fonts/icomoon.ttf') format('truetype'), url('/fonts/icomoon.svg#icomoon') format('svg')
+  font-weight: normal
+  font-style: normal
+.term-bottom
+  font-style: italic
+  clear: both
+.featured-item-panel
+
+  overflow: hidden
+.section-nav
+  float: none
+  margin-top: 10px
+  li
+    float: none
+    padding: 0 8px
+ul.people
+  overflow: hidden
+  margin-bottom: 20px
+  li
+    float: left
+    width: 100%
+    font-weight: 300
+body.en
+  .fr
+    display: none
+body.fr
+  font-size: 12px
+  .en
+    display: none
+#header
+  position: relative
+#wrap
+  min-height: 100%
+#main
+  overflow: auto
+  padding-bottom: 30px
+#footer
+  position: relative
+  margin-top: -30px
+  clear: both
+body:before
+  content: ""
+  height: 100%
+  float: left
+  width: 0
+  margin-top: -32767px
+html, body, #wrapper, .innerWrapper
+  height: 100%
+body
+  line-height: 1.45
+  font-family: Roboto,sans-serif
+  background: white url(/assets/pattern.png)
+a:focus
+  outline: 0
+a,
+a:hover
+  text-decoration: none !important
+  border-bottom: 0 !important
+  color: #ee9b16
+.symbols
+  font-family: symbols
+.clear
+  clear: both
+.cf:before,
+.cf:after
+  content: " "
+  display: table
+.cf:after 
+  clear: both
+.cf
+  *zoom: 1
+.messages
+  position: absolute
+  right: 0
+  top: 0
+  z-index: 99999999
+  right: 1px
+  top: 0px
+  background: black
+  display: none
+  .msg
+    color: white
+    padding: 10px 15px
+.unstyled
+  list-style: none
+  padding: 0
+  margin: 0
+.admin-form
+  .form-select
+    margin-bottom: 20px
+    select
+
+  .form-inputs>select
+    margin-bottom: 20px
+  textarea
+
+    height: 250px
+  .small-text
+    font-weight: 300
+    font-size: 10px
+.btn-sm, .btn-xs
+  padding: 5px 10px
+  font-size: 12px
+  line-height: 1.5
+  border-radius: 3px
+.btn-xs
+  padding: 1px 5px
+.btn-default
+  color: #333333
+  background-color: #ffffff
+  border-color: #cccccc
+.help-inline
+  padding-left: 10px
+.form-actions
+  padding: 20px 0
+  background: transparent
+  clear: both
+.control-group
+  margin-bottom: 20px
+.control-group.boolean
+  margin-bottom: 0px
+  label
+    float: left
+    margin-top: 0px
+    margin-right: 10px
+  .controls
+    margin-top: 0px
+    float: left
+  &:after
+    content: ''
+    display: block
+    clear: both
+.panel
+  border: none
+  background: transparent
+  box-shadow: none
+h3
+  font-size: 24px
+  line-height: 27px
+  font-family: Roboto
+.regular
+  font-weight: 400
+.light
+  font-weight: 300
+
+body.user, body.sessions
+  form.simple_form
+    input[type=text], input[type=password], input[type=tel], input[type=email]
+      margin-bottom: 10px
+
+      padding: 5px
+      &:focus
+        outline: 0
+        box-shadow: none
+    label
+      margin-bottom: 10px
+body.user, body.sessions
+  form.simple_form, h1, h2, h3, #wrapper > a, p
+    width: 66.6%
+    margin: 0 auto
+    display: block
+body.user, body.sessions
+  h1, h2, h3
+    margin-top: 60px
+.navbar
+  a
+    color: #333
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus
+  background-color: #666
+  background-image: -webkit-gradient(linear,left 0,left 100%,from(#666),to(#555))
+  background-image: -webkit-linear-gradient(top,#666,0%,#555,100%)
+  background-image: -moz-linear-gradient(top,#666 0,#555 100%)
+  background-image: linear-gradient(to bottom,#666 0,#555 100%)
+
+
+$gray: #acacac
+$lightgray: #ededed
+$lightergray: #d8d8d8
+$medgray: #9c9c9c
+$midgray: #828282
+$darkgray: #424242
+$darkergray: #333
+$orange: #ee9b16
+
+header
+  .flap
+    background: url(/assets/short-flap.png)
+    height: 103px
+    width: 256px
+    float: left
+    position: relative
+    z-index: 2
+    
+    #logo
+      /*background: url(/assets/logo.png)*/
+      height: 25px
+      width: 151px
+      margin: 35px auto
+      position: relative
+      z-index: 1
+      display: block
+    &.news, &.about, &.glossary, &.contact, &.news_story
+      background: url(/assets/short-flap.png)
+      height: 103px
+      width: 256px
+      #logo
+        height: 25px
+        width: 151px
+        margin: 35px auto
+  .lang
+    float: right
+    margin-top: 5px
+    margin-bottom: 10px
+    padding: 0 0px 0 0
+    position: relative
+    right 10px
+    width: 110px
+    span
+      display: block
+      float: left
+      margin: 0 10px 0 5px
+      font-weight: 500
+    label
+      width: 13px
+      height: 12px
+      text-indent: -99999px
+      background: url(/assets/radio-buttons.png)
+      display: block
+      float: left
+      margin-top: 4px
+    input
+      display: none
+  .nav
+    float: left
+    width: 100%
+    li
+      float: left
+      width: 20%
+      .en a
+        display: block
+        background: $gray
+        padding: 5px
+        width: 100%
+        color: white
+        font-weight: 500
+        height: 31px
+        font-size: 12px
+        line-height: 21px
+        border-right: 1px solid white
+        &.on
+          font-weight: 400
+          background: url(/assets/nav-on.png)
+          background-size: 100% 100%
+        &:hover
+          display: block
+          background: url(/assets/nav-on.png)
+          padding: 5px
+          width: 100%
+          color: white
+          background-size: 100% 100%
+      .fr a
+        display: block
+        background: $gray
+        padding: 5px
+        width: 100%
+        color: white
+        font-weight: 500
+        height: 31px
+        font-size: 11px
+        line-height: 21px
+        margin-right: 1px solid white
+        &.on
+          font-weight: 400
+          background: url(/assets/nav-on.png)
+          background-size: 100% 100%
+        &:hover
+          display: block
+          background: url(/assets/nav-on.png)
+          padding: 5px
+          width: 100%
+          color: white
+          background-size: 100% 100%
+  .search
+    margin-top: 20px
+    float: left
+    position: relative
+    width: 100%
+    input[type=submit]
+      background: url(/assets/search-icon.png)
+      border: none
+      border-radius: 0
+      text-indent: -99999px
+      margin: 0
+      display: block
+      float: left
+      width: 30px
+      height: 31px
+      position: absolute
+    input[type=text]
+      display: block
+      float: left
+      height: 31px
+      width: 100%
+      background: $lightgray
+      border: 0
+      box-shadow: 0
+      padding-left: 35px
+      &:focus
+        border 0
+        box-shadow: 0
+        outline: none
+  .help
+    float: left
+    a
+      display: block
+      color: $medgray
+      font-size: 15px
+      margin: 5px 0 0 13px
+      font-weight: 600
+  .header-lines
+    .lines
+      background: url(/assets/lines.png)
+      width: auto
+      height: 4px
+      float: left
+      margin-top: 20px
+      position: relative
+      z-index: 1
+    .pointer
+      float: right
+      margin-top: -44px
+      a
+        background: url(/assets/pointer.png) right bottom no-repeat
+        height: 44px
+        width: auto
+        padding-right: 37px
+        display: block
+        color: $darkergray
+        padding-top: 12px
+        font-size: 15px
+        font-weight: 500
+        position: relative
+        z-index: 1
+    &.news, &.about, &.glossary, &.contact, &.news_story
+      .lines
+        bottom: 80px
+      .pointer
+        margin-top: -84px
+        z-index: 2
+        position: relative
+        a
+          background: url(/assets/discovery-pointer.png) right bottom no-repeat
+.filter_container
+  .polygons
+    padding-left: 20px
+    margin-top: 20px
+    margin-bottom: 20px
+    overflow: hidden
+    width: 100%
+    li
+      float: left
+      background: url(/assets/polygon-sprite.png)
+      width: 186px
+      height: 53px
+      margin: 0 -8px
+      opacity: 0.85
+      z-index: 1
+      background-position: 0 -371px
+      a
+        display: table-cell
+        color: white
+        text-align: center
+        vertical-align: middle
+        width: 186px
+        height: 53px
+        padding: 0 20px
+        line-height: 1
+        &:hover
+          text-decoration: none
+      &:hover
+        z-index: 2
+        position: relative
+      &.on
+        z-index: 2
+        position: relative
+      &.education:hover
+        background-position: 0 0
+      &.youth-engagement:hover
+        background-position: 0 -53px
+      &.how-change-happens:hover
+        background-position: 0 -106px
+      &.gender-equality:hover
+        background-position: 0 -159px
+      &.monitoring-and-evaluation:hover
+        background-position: 0 -212px
+      &.partnership-and-collaboration:hover
+        background-position: 0 -265px
+      &.policy:hover
+        background-position: 0 -318px
+      &.education.on
+        background-position: 0 0
+      &.youth-engagement.on
+        background-position: 0 -53px
+      &.how-change-happens.on
+        background-position: 0 -106px
+      &.gender-equality.on
+        background-position: 0 -159px
+      &.monitoring-and-evaluation.on
+        background-position: 0 -212px
+      &.partnership-and-collaboration.on
+        background-position: 0 -265px
+      &.policy.on
+        background-position: 0 -318px
+  .content-types
+    overflow: hidden
+    padding-left: 12px
+    padding-bottom: 60px
+    .content-type
+      float: left
+      width: auto
+      &.on
+        a
+          color: $darkgray
+      a
+        display: block
+        float: left
+        width: auto
+        color: $medgray
+        .icon
+          height: 24px
+          width: 24px
+          background: url(/assets/content-types.png)
+          float: left
+          margin-right: 10px
+        .text
+          padding-top: 4px
+      .line
+        width: 1px
+        height: 25px
+        background: url(/assets/content-type-line.png)
+        float: left
+        margin: 0 35px
+      &.seeAll
+        width: 250px
+        .icon
+          background-position: 0px -192px
+        .text
+          width: 164px
+        &.on
+          .icon
+            background-position: 0px -168px
+      &.context
+        width: 155px
+        a
+          width: 84px
+        .icon
+          background-position: -144px -192px
+        &.on
+          .icon
+            background-position: -144px -168px
+      &.good-practices
+        width: 202px
+        a
+          width: 131px
+        .icon
+          background-position: -120px -192px
+        &.on
+          .icon
+            background-position: -120px -168px
+      &.tools
+        width: 141px
+        a
+          width: 70px
+        .icon
+          background-position: -96px -192px
+        &.on
+          .icon
+            background-position: -96px -168px
+      &.case-studies
+        width: 188px
+        a
+          width: 117px
+        .icon
+          background-position: -72px -192px
+        &.on
+          .icon
+            background-position: -72px -168px
+      &.resources
+        width: 172px
+        a
+          width: 101px
+        .icon
+          background-position: -48px -192px
+        &.on
+          .icon
+            background-position: -48px -168px
+      &.webinars
+        a
+          width: 95px
+        .icon
+          background-position: -24px -192px
+        &.on
+          .icon
+            background-position: -24px -168px
+  &.news, &.about, &.glossary, &.contact, &.news_story
+    display: none
+.photo
+  overflow: hidden
+  background: url(/assets/headerimage.jpg)
+  height: 325px
+  color: white
+  padding: 0 20px
+  .main-text
+    width: auto
+    h1
+      line-height: 1.2
+  .sub-text
+    width: auto
+    h2
+      font-size: 18px
+      line-height: 1.2
+.en
+  .main-text
+    h1
+      font-size: 32px
+.fr
+  .main-text
+    h1
+      font-size: 32px
+.row .panels
+  overflow: hidden
+  padding-top: 10px
+  margin-bottom: 340px
+  .panel
+    float: left
+    margin: 0
+    padding: 0
+    margin-right: 10px
+    width: auto
+    &:last-child
+      margin-right: 0
+  .panel-header
+    background: $darkgray
+    padding: 0 10px
+    height: auto
+    min-height: 40px
+    h3
+      color: white
+      margin: 0
+      text-transform: uppercase
+      line-height: 40px
+  .feature-spot
+    overflow: hidden
+    &.how-change-happens
+      width: auto
+      height: 435px
+    &.youth-engagement
+      width: auto
+      height: 540px
+    .category-image
+      position: relative
+      overflow: hidden
+      height: 100%
+      img
+        display: inline-block
+        max-width: 100%
+      .category-header
+        padding: 0 10px 5px
+        height: auto
+        z-index: 2
+        width: 100%
+        h3
+          text-align: left
+          line-height: 1.2
+          color: white
+          margin: 0
+
+  .homepage-blog-feed
+    width: auto
+    .blog-items
+      background: white
+      border: 1px solid #c2c2c2
+      padding: 0 20px
+      ul
+        padding-top: 10px
+        li
+          border-bottom: 1px solid $lightergray
+          padding-bottom: 5px
+          margin-bottom: 5px
+          overflow: hidden
+          &:last-child
+            border-bottom: 0
+          h4
+            font-weight: 300
+            margin-bottom: 8px
+            .title
+              color: #000
+            .date
+              color: $midgray
+          p
+            font-weight: 300
+            font-size: 18px
+            color: $midgray
+
+.isotope-container
+  .isotope-item
+    &.how-change-happens.context
+      .header-icon
+        background-position: -144px -144px
+    &.how-change-happens.good-practices
+      .header-icon
+        background-position: -120px -144px
+    &.how-change-happens.tools
+      .header-icon
+        background-position: -96px -144px
+    &.how-change-happens.case-studies
+      .header-icon
+        background-position: -72px -144px
+    &.how-change-happens.resources
+      .header-icon
+        background-position: -48px -144px
+    &.how-change-happens.webinars
+      .header-icon
+        background-position: -24px -144px
+
+    &.education.context
+      .header-icon
+        background-position: -144px -120px
+    &.education.good-practices
+      .header-icon
+        background-position: -120px -120px
+    &.education.tools
+      .header-icon
+        background-position: -96px -120px
+    &.education.case-studies
+      .header-icon
+        background-position: -72px -120px
+    &.education.resources
+      .header-icon
+        background-position: -48px -120px
+    &.education.webinars
+      .header-icon
+        background-position: -24px -120px
+    
+    &.gender-equality.context
+      .header-icon
+        background-position: -144px -96px
+    &.gender-equality.good-practices
+      .header-icon
+        background-position: -120px -96px
+    &.gender-equality.tools
+      .header-icon
+        background-position: -96px -96px
+    &.gender-equality.case-studies
+      .header-icon
+        background-position: -72px -96px
+    &.gender-equality.resources
+      .header-icon
+        background-position: -48px -96px
+    &.gender-equality.webinars
+      .header-icon
+        background-position: -24px -96px
+        
+    &.monitoring-and-evaluation.context
+      .header-icon
+        background-position: -144px -72px
+    &.monitoring-and-evaluation.good-practices
+      .header-icon
+        background-position: -120px -72px
+    &.monitoring-and-evaluation.tools
+      .header-icon
+        background-position: -96px -72px
+    &.monitoring-and-evaluation.case-studies
+      .header-icon
+        background-position: -72px -72px
+    &.monitoring-and-evaluation.resources
+      .header-icon
+        background-position: -48px -72px
+    &.monitoring-and-evaluation.webinars
+      .header-icon
+        background-position: -24px -72px
+    
+    &.partnership-and-collaboration.context
+      .header-icon
+        background-position: -144px -48px
+    &.partnership-and-collaboration.good-practices
+      .header-icon
+        background-position: -120px -48px
+    &.partnership-and-collaboration.tools
+      .header-icon
+        background-position: -96px -48px
+    &.partnership-and-collaboration.case-studies
+      .header-icon
+        background-position: -72px -48px
+    &.partnership-and-collaboration.resources
+      .header-icon
+        background-position: -48px -48px
+    &.partnership-and-collaboration.webinars
+      .header-icon
+        background-position: -24px -48px
+    
+    &.policy.context
+      .header-icon
+        background-position: -144px -24px
+    &.policy.good-practices
+      .header-icon
+        background-position: -120px -24px
+    &.policy.tools
+      .header-icon
+        background-position: -96px -24px
+    &.policy.case-studies
+      .header-icon
+        background-position: -72px -24px
+    &.policy.resources
+      .header-icon
+        background-position: -48px -24px
+    &.policy.webinars
+      .header-icon
+        background-position: -24px -24px
+    
+    &.youth-engagement.context
+      .header-icon
+        background-position: -144px 0px
+    &.youth-engagement.good-practices
+      .header-icon
+        background-position: -120px 0px
+    &.youth-engagement.tools
+      .header-icon
+        background-position: -96px 0px
+    &.youth-engagement.case-studies
+      .header-icon
+        background-position: -72px 0px
+    &.youth-engagement.resources
+      .header-icon
+        background-position: -48px 0px
+    &.youth-engagement.webinars
+      .header-icon
+        background-position: -24px 0px
+
+.isotope-container
+  overflow: hidden
+  padding-top: 0px
+  &.isotope-container-explore, &.isotope-container-search
+    min-height: 666px
+    margin-bottom: 215px
+  #items
+
+    .item
+      margin: 0px
+      padding: 4px
+      overflow: hidden
+      cursor: pointer
+      .expansion
+        height: 100%
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        .loading
+          position: relative
+          top: 50%
+          left: 50%
+          margin-top: -7px
+          margin-left: -7px
+          color: white
+      .panel-image
+        position: relative
+        overflow: hidden
+        height: 100%
+        img
+          display: inline-block
+        .item-header
+          padding: 0 25px 8px 15px
+          height: auto
+          z-index: 2
+          width: 100%
+          border-bottom: 1px solid #fff
+          .header-icon
+            height: 24px
+            width: 24px
+            float: right
+            margin-right: -20px
+            margin-top: 8px
+            background-image: url(/assets/content-types.png)
+          h3
+            text-align: left
+            line-height: 1.2
+            padding-top: 8px
+            font-size: 19px
+            color: white
+            margin: 0
+        .item-text
+          color: white
+          padding: 0 20px 20px
+          height: 100%
+          p
+            font-size: 18px
+            line-height: 24px
+            font-family: Roboto
+            font-weight: 400
+          a
+            text-decoration: underline !important
+      &.large
+
+        height: 486px
+      &.small
+
+        height: 243px
+      &.wide
+
+        height: 243px
+      &.tall
+
+        height: 486px
+          
+.isotope-container-explore, .isotope-container-search
+  .panel
+    float: left
+    
+
+
+.isotope-item
+  z-index: 2
+.isotope-hidden.isotope-item
+  pointer-events: none
+  z-index: 1
+.isotope,
+.isotope .isotope-item
+  -webkit-transition-duration: 0.8s
+  -moz-transition-duration: 0.8s
+  -ms-transition-duration: 0.8s
+  -o-transition-duration: 0.8s
+  transition-duration: 0.8s
+.isotope
+  -webkit-transition-property: height, width
+  -moz-transition-property: height, width
+  -ms-transition-property: height, width
+  -o-transition-property: height, width
+  transition-property: height, width
+.isotope .isotope-item
+  -webkit-transition-property: -webkit-transform, opacity
+  -moz-transition-property:    -moz-transform, opacity
+  -ms-transition-property:     -ms-transform, opacity
+  -o-transition-property:      -o-transform, opacity
+  transition-property:         transform, opacity
+.isotope-hidden.isotope-item
+  pointer-events: none
+  z-index: 1
+
+.no-rgba
+  footer
+    .on-state
+      height: 0
+      overflow: hidden
+      background: black
+      position: relative
+      width: 100%
+      padding-top: 15px
+    .off-state
+      background: black
+      position: relative
+      height: 30px
+      .copy
+        color: $midgray
+        font-family: Roboto
+        font-weight: 500
+        font-size: 12px
+        line-height: 28px
+        float: right
+        margin-right: 100px
+      a.control.turnOn
+        position: absolute
+        right: 0
+        bottom: 0
+.rgba
+  footer
+    .on-state
+      height: 0
+      overflow: hidden
+      background: rgba(0,0,0,0.9)
+      position: relative
+      width: 100%
+      padding-top: 15px
+      z-index: 3
+      bottom: -2px
+      display: none
+    .off-state
+      background: rgba(0,0,0,0.9)
+      position: relative
+      height: 30px
+      z-index: 3
+      .copy
+        color: $midgray
+        font-family: Roboto
+        font-weight: 500
+        font-size: 12px
+        line-height: 28px
+        float: left
+        margin-right: 0
+      a.control.turnOn
+        position: absolute
+        right: 20px
+        bottom: -30px
+        height: 30px
+        &:after
+          content: ''
+          background: url(/assets/footer-arrow.png)
+          height: 10px
+          width: 27px
+          position: absolute
+          bottom: 28px
+          right: -4px
+        img
+          position: relative
+          bottom: 4px
+          z-index: 2
+          left: -1px
+footer
+  .main-footer-nav
+    float: left
+    margin-right: 72px
+    ul
+      li
+        a
+          color: $midgray
+          font-size: 12px
+          line-height: 24px
+          font-family: Roboto
+          font-weight: 500
+  .sub-footer-nav
+    float: left
+    margin-right: 90px
+    ul
+      li
+        a
+          color: $midgray
+          font-size: 12px
+          line-height: 24px
+          font-family: Roboto
+          font-weight: 500
+  .intercouncil
+    float: left
+    padding-top: 20px
+    .inter-logo
+      float: left
+      margin-right: 20px
+      a
+        background: url(/assets/inter-logo.png)
+        width: 186px
+        height: 53px
+        display: block
+    .inter-text
+      float: left
+      color: $midgray
+
+      padding-top: 10px
+      font-size: 12px
+      line-height: 24px
+      font-family: Roboto
+      font-weight: 500
+
+.page-contents
+  background: white
+  padding: 0 5px 10px
+  margin-bottom: 340px
+  .page-rect
+    background: $orange
+    width: 100%
+    height: auto
+    h1
+      color: white
+      font-family: Roboto
+      font-weight: 400
+      font-size: 26px
+      line-height: 48px
+      padding-left: 15px
+      a
+        color: white
+  .post-listing
+    padding: 0
+    .the-posts
+      .the-post
+        margin-bottom: 20px
+        overflow: hidden
+        .meta-info
+          float: left
+          width: 12%
+          padding: 0px 40px 0 0
+          margin-top: 13px
+          .post-author
+            font-size: 16px
+            line-height: 20px
+            font-weight: 500
+            color: $orange
+            margin-bottom: 10px
+          .post-created-at
+            font-size: 16px
+            line-height: 1
+            font-weight: 300
+            color: $midgray
+        .post-info
+          float: left
+          width: 88%
+          overflow: hidden
+          .post-photo
+            float: left
+            width: 40%
+            margin-right: 3%
+            margin-top: 12px
+            img
+              width: 100%
+          .post-text
+            float: left
+            width: 57%
+            &.no-photo
+              width: 100%
+            .post-title
+              .edit-link
+                font-size: 10px
+                text-decoration: underline
+                margin-left: 5px
+              h2
+                margin-top: 5px
+                line-height: 1
+                font-size: 19px
+                a
+                  font-size: 19px
+                  line-height: 1
+                  font-weight: 400
+                  color: #000
+            .post-body
+              border-bottom: 1px solid $lightergray
+              p
+                font-size: 16px
+                line-height: 1.45
+                font-weight: 300
+                color: #000
+                margin-bottom: 17px
+.pagination
+  float: right
+  li
+    display: none
+    &:nth-last-child(2)
+      display: inline
+      a
+        border: 0
+        border-radius: 0
+        background: transparent
+        padding: 1px 4px 1px 0
+        font-size: 14px
+        color: $medgray
+    &.active
+      display: inline
+      span
+        border: 0
+        border-radius: 0
+        background: transparent
+        padding: 1px 4px
+        font-size: 14px
+        color: $medgray
+        &:after
+          content: '/'
+          display: inline
+          padding: 1px 0 1px 4px
+          font-size: 14px
+          color: $medgray
+    &.prev
+      display: inline
+      a
+        display: block
+        background: url(/assets/pagination-arrows.png)
+        width: 21px
+        height: 22px
+        background-position: 0 0
+        text-indent: -9999px
+        border: 0
+        border-radius: 0
+      &.disabled
+        span
+          display: block
+          background: url(/assets/pagination-arrows.png)
+          width: 21px
+          height: 22px
+          text-indent: -9999px
+          background-position: 0 -22px
+          border: 0
+          border-radius: 0
+    &.next
+      display: inline
+      a
+        display: block
+        background: url(/assets/pagination-arrows.png)
+        width: 21px
+        height: 22px
+        background-position: -21px 0
+        text-indent: -9999px
+        border: 0
+        border-radius: 0
+      &.disabled
+        span
+          display: block
+          background: url(/assets/pagination-arrows.png)
+          width: 21px
+          height: 22px
+          text-indent: -9999px
+          background-position: -21px -22px
+          border: 0
+          border-radius: 0
+  .totalPages
+    span
+      background-color: transparent
+      border: 0
+      color: $medgray
+      padding: 1px 4px 1px 0
+
+.section-listing
+  padding: 20px 10px 10px 10px
+  clear: both
+  .the-sections
+    .the-section
+      margin-bottom: 45px
+      padding-bottom: 20px
+      border-bottom: 1px solid $lightergray
+      img
+        max-width: 100%
+      .section-title
+        .edit-link
+          font-size: 10px
+          text-decoration: underline
+          margin-left: 5px
+          color: black
+        h2
+          font-size: 28px
+          font-weight: 300
+      .section-body
+        p
+          font-size: 16px
+          font-weight: 300
+.cida
+  border-top: 1px solid $lightergray
+  margin-left: 0px
+  margin-right: 0px
+  p
+    margin-bottom: 25px
+    margin-top: 25px
+.cida-image
+  img
+    max-width: 100%
+.term-listing
+  padding: 20px 10px 10px 10px
+  .the-terms
+    .the-term
+      margin-bottom: 25px
+      overflow: hidden
+      .term-title
+        float: left
+        width: 100%
+        padding: 0px 40px 0 0
+        .fr
+          word-break: break-word
+        .edit-link
+          font-size: 10px
+          text-decoration: underline
+          margin-left: 5px
+          color: black
+        h2
+          font-size: 16px
+          font-weight: 400
+          color: $orange
+          margin-top: 4px
+      .term-definition
+        float: left
+        width: 100%
+        border-bottom: 1px solid $lightergray
+        padding-bottom: 10px
+        p
+          font-size: 16px
+          font-weight: 300
+.term-alphabets
+  float: none
+  padding-right: 0
+  margin-bottom: 10px
+  overflow: hidden
+  margin-top: 10px
+  li
+    float: left
+    a
+      display: block
+      color: $lightergray
+      padding: 0 9px
+      &.on
+        color: $medgray
+.contact-wrapper
+  padding: 20px 10px 10px 10px
+.page-contents.contact
+  margin-bottom: 240px
+  .contact-section
+    float: left
+    width: auto
+    font-size: 16px
+    &.left
+      margin-right: 0px
+      margin-bottom: 20px
+    .contact-text
+      p
+        font-size: 16px
+        font-weight: 500
+        &:first-child
+          margin-bottom: 25px
+    .contact-info
+      .name
+        font-style: italic
+        font-weight: 300
+      .address
+        font-weight: 300
+      .phone
+        font-weight: 300
+      .links
+        font-weight: 300
+        a
+          font-weight: 300
+          color: $orange
+  .smallerboxes
+    padding-top: 20px
+    overflow: hidden
+    clear: both
+  .contact-box
+    float: left
+    width: 215px
+    margin-right: 145px
+    margin-bottom: 45px
+    &.last
+      margin-right: 0
+    .contact-text
+      p
+        font-size: 16px
+        font-weight: 500
+        margin-bottom: 15px
+    .contact-info
+      .name
+        font-style: italic
+        font-weight: 300
+      .address
+        font-weight: 300
+      .phone
+        font-weight: 300
+      .links
+        font-weight: 300
+        a
+          font-weight: 300
+          color: $orange
+.selected-modules
+  position: relative
+  bottom: 12px
+  margin-top: 20px
+.selected-mod
+  position: relative
+  cursor: default
+  padding-top: 3px
+  &:hover
+    background-color: #fff
+    color: #000
+  .removemod
+    position: absolute
+    font-size: 11px
+    top: 4px
+    right: 1px
+    cursor: pointer
+    margin: 0
+    line-height: 0
+    color: $midgray
+.admin-helper-link
+  position: absolute
+  top: 0px
+  right: -20px
+article.post-display
+  padding: 10px 10px 0 0
+  header
+    h1
+      font-size: 24px
+      margin-bottom: 5px
+  section.body
+    padding-bottom: 80px
+    border-bottom: 1px solid $lightergray
+    overflow: hidden
+    p
+      font-size: 16px
+      line-height: 24px
+      font-weight: 300
+    img
+      float: left
+      padding: 15px
+.pages-news_story
+  .post-meta
+    font-size: 16px
+    font-weight: 300
+    margin-bottom: 25px
+    span
+      padding 0 5px
+      &.auth
+        padding-left: 0
+        color: $orange
+        font-weight: 400
+  .post-listing
+    padding: 25px 0 70px 0
+
+.item-darkener
+  position: absolute
+  top: 4px
+  right: 4px
+  bottom: 4px
+  left: 4px
+  background: rgba(0,0,0,0.8)
+.item-darkener-less
+  position: absolute
+  top: 4px
+  right: 4px
+  bottom: 4px
+  left: 4px
+  background: rgba(0,0,0,0.4)
+
+.related
+  li
+    &.how-change-happens.context
+      .icon
+        background-position: -144px -144px
+    &.how-change-happens.good-practices
+      .icon
+        background-position: -120px -144px
+    &.how-change-happens.tools
+      .icon
+        background-position: -96px -144px
+    &.how-change-happens.case-studies
+      .icon
+        background-position: -72px -144px
+    &.how-change-happens.resources
+      .icon
+        background-position: -48px -144px
+    &.how-change-happens.webinars
+      .icon
+        background-position: -24px -144px
+    
+    &.education.context
+      .icon
+        background-position: -144px -120px
+    &.education.good-practices
+      .icon
+        background-position: -120px -120px
+    &.education.tools
+      .icon
+        background-position: -96px -120px
+    &.education.case-studies
+      .icon
+        background-position: -72px -120px
+    &.education.resources
+      .icon
+        background-position: -48px -120px
+    &.education.webinars
+      .icon
+        background-position: -24px -120px
+    
+    &.gender-equality.context
+      .icon
+        background-position: -144px -96px
+    &.gender-equality.good-practices
+      .icon
+        background-position: -120px -96px
+    &.gender-equality.tools
+      .icon
+        background-position: -96px -96px
+    &.gender-equality.case-studies
+      .icon
+        background-position: -72px -96px
+    &.gender-equality.resources
+      .icon
+        background-position: -48px -96px
+    &.gender-equality.webinars
+      .icon
+        background-position: -24px -96px
+        
+    &.monitoring-and-evaluation.context
+      .icon
+        background-position: -144px -72px
+    &.monitoring-and-evaluation.good-practices
+      .icon
+        background-position: -120px -72px
+    &.monitoring-and-evaluation.tools
+      .icon
+        background-position: -96px -72px
+    &.monitoring-and-evaluation.case-studies
+      .icon
+        background-position: -72px -72px
+    &.monitoring-and-evaluation.resources
+      .icon
+        background-position: -48px -72px
+    &.monitoring-and-evaluation.webinars
+      .icon
+        background-position: -24px -72px
+    
+    &.partnership-and-collaboration.context
+      .icon
+        background-position: -144px -48px
+    &.partnership-and-collaboration.good-practices
+      .icon
+        background-position: -120px -48px
+    &.partnership-and-collaboration.tools
+      .icon
+        background-position: -96px -48px
+    &.partnership-and-collaboration.case-studies
+      .icon
+        background-position: -72px -48px
+    &.partnership-and-collaboration.resources
+      .icon
+        background-position: -48px -48px
+    &.partnership-and-collaboration.webinars
+      .icon
+        background-position: -24px -48px
+    
+    &.policy.context
+      .icon
+        background-position: -144px -24px
+    &.policy.good-practices
+      .icon
+        background-position: -120px -24px
+    &.policy.tools
+      .icon
+        background-position: -96px -24px
+    &.policy.case-studies
+      .icon
+        background-position: -72px -24px
+    &.policy.resources
+      .icon
+        background-position: -48px -24px
+    &.policy.webinars
+      .icon
+        background-position: -24px -24px
+    
+    &.youth-engagement.context
+      .icon
+        background-position: -144px 0px
+    &.youth-engagement.good-practices
+      .icon
+        background-position: -120px 0px
+    &.youth-engagement.tools
+      .icon
+        background-position: -96px 0px
+    &.youth-engagement.case-studies
+      .icon
+        background-position: -72px 0px
+    &.youth-engagement.resources
+      .icon
+        background-position: -48px 0px
+    &.youth-engagement.webinars
+      .icon
+        background-position: -24px 0px
+
+.expansion
+  margin: 0px
+  overflow: hidden
+  position: absolute
+  .mCustomScrollBox:hover>.mCSB_scrollTools
+    opacity: .75
+  .mCSB_scrollTools
+    .mCSB_draggerRail
+      background: $lightergray
+      width: 10px
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+    .mCSB_dragger
+      background: white url(/assets/fscroll.png) center bottom no-repeat
+      width: 15px
+    .mCSB_dragger:hover .mCSB_dragger_bar,
+    .mCSB_dragger_bar,
+    .mCSB_dragger_bar:hover
+      background: transparent
+  .panel-image
+    position: relative
+    overflow: hidden
+    height: 100%
+    .item-header
+      padding: 0 25px 0 15px
+      height: 40px
+      z-index: 2
+      width: 100%
+      border-bottom: 1px solid #fff
+      .header-icon
+        height: 24px
+        width: 24px
+        float: right
+        margin-right: -20px
+        margin-top: 8px
+        background-image: url(/assets/content-types.png)
+      
+      h3
+        text-align: left
+        line-height: 40px
+        font-size: 19px
+        color: white
+        margin: 0
+    .item-contents
+      overflow: hidden
+      height: 590px
+      margin-bottom: 46px
+      .related-modules
+        float: left
+        width: 247px
+        padding: 10px
+        h4
+          font-size: 12px
+          color: white
+          font-weight: 600
+          border-bottom: 5px solid white
+          padding-bottom: 5px
+        .related
+          li
+            padding: 10px 0
+            border-bottom: 2px solid white
+            overflow: hidden
+            &:last-child
+              border-bottom: 0
+            .icon
+              float: left
+              width: 24px
+              height: 24px
+              background-image: url(/assets/content-types.png)
+            .title
+              float: left
+              padding-left: 10px
+              width: 200px
+              a
+                color: white
+                font-style: italic
+                font-size: 11px
+                font-weight: 500
+        .hub-link
+          a
+            display: block
+            width: 212px
+            height: 47px
+            background-image: url(/assets/hublink-arrows.png)
+            font-weight: 600
+            font-size: 11px
+            line-height: 16px
+            padding: 7px 30px 0 10px
+      .module
+        float: left
+
+        margin-top: 38px
+        margin-bottom: 7px
+        .item-text
+          color: white
+          padding: 0 20px 20px
+          height: 100%
+          p
+            font-size: 15px
+            line-height: 20px
+            font-family: Roboto
+            font-weight: 300
+            a
+              color: white
+              font-weight: 400
+              text-decoration: underline !important
+          a
+            color: white
+            font-weight: 400
+            text-decoration: underline !important
+    .item-footer
+      height: 45px
+      border-top: 1px solid #fff
+      .social
+        float: left
+        .twitter
+          float: left
+          padding: 10px 4px
+          a
+            display: block
+            height: 24px
+            width: 24px
+            background-image: url(/assets/twitter-sprite.png)
+          &.how-change-happens
+            a
+              background-position: 0px -144px
+          &.education
+            a
+              background-position: 0px -120px
+          &.gender-equality
+            a
+              background-position: 0px -96px
+          &.monitoring-and-evaluation
+            a
+              background-position: 0px -72px
+          &.partnership-and-collaboration
+            a
+              background-position: 0px -48px
+          &.policy
+            a
+              background-position: 0px -24px
+          &.youth-engagement
+            a
+              background-position: 0px 0px
+        .facebook
+          float: left
+          padding: 10px 4px
+          a
+            display: block
+            height: 24px
+            width: 24px
+            background-image: url(/assets/fb-sprite.png)
+          &.how-change-happens
+            a
+              background-position: 0px -144px
+          &.education
+            a
+              background-position: 0px -120px
+          &.gender-equality
+            a
+              background-position: 0px -96px
+          &.monitoring-and-evaluation
+            a
+              background-position: 0px -72px
+          &.partnership-and-collaboration
+            a
+              background-position: 0px -48px
+          &.policy
+            a
+              background-position: 0px -24px
+          &.youth-engagement
+            a
+              background-position: 0px 0px
+      .actions
+        float: right
+        .minus
+          padding: 10px 4px
+          float: left
+          a
+            display: block
+            height: 24px
+            width: 24px
+            background-image: url(/assets/minus-sprite.png)
+          &.how-change-happens
+            a
+              background-position: 0px -144px
+          &.education
+            a
+              background-position: 0px -120px
+          &.gender-equality
+            a
+              background-position: 0px -96px
+          &.monitoring-and-evaluation
+            a
+              background-position: 0px -72px
+          &.partnership-and-collaboration
+            a
+              background-position: 0px -48px
+          &.policy
+            a
+              background-position: 0px -24px
+          &.youth-engagement
+            a
+              background-position: 0px 0px
+.related-modules
+  .hub-link
+    &.how-change-happens
+      a
+        background-position: 0px 0px
+        color: #26ba95
+    &.education
+      a
+        background-position: 0px -47px
+        color: #128ab5
+    &.gender-equality
+      a
+        background-position: 0px -94px
+        color: #b5c41d
+    &.monitoring-and-evaluation
+      a
+        background-position: 0px -141px
+        color: #d39a0d
+    &.partnership-and-collaboration
+      a
+        background-position: 0px -188px
+        color: #d3620d
+    &.policy
+      a
+        background-position: 0px -235px
+        color: #be0055
+    &.youth-engagement
+      a
+        background-position: 0px -282px
+        color: #8f0879
+.hub.page-contents
+  .page-rect
+    width: auto
+    background-repeat: no-repeat
+    h1
+      color: white
+      font-family: Roboto
+      font-weight: 400
+      font-size: 26px
+      line-height: 48px
+      padding-left: 15px
+
+  &.how-change-happens
+    .page-rect
+      background-position: 0px -215px
+  &.education
+    .page-rect
+      background-position: 0px -54px
+  &.gender-equality
+    .page-rect
+      background-position: 0px -108px
+  &.monitoring-and-evaluation
+    .page-rect
+      background-position: 0px -270px
+  &.partnership-and-collaboration
+    .page-rect
+      background-position: 0px -324px
+  &.policy
+    .page-rect
+      background-position: 0px 0px
+  &.youth-engagement
+    .page-rect
+      background-position: 0px -162px
+.en
+  .hub.page-contents
+    .page-rect
+      background-image: none
+.fr
+  .hub.page-contents
+    .page-rect
+      background-image: none
+.hub-item-listing
+  padding: 10px
+  overflow: hidden
+  clear: both
+  article
+    margin-bottom: 25px
+    padding-bottom: 50px
+    border-bottom: 1px solid $lightergray
+    h1
+      font-size: 24px
+      margin-bottom: 10px
+    section
+      clear: both
+
+.item-sub
+  margin-bottom: 20px
+  overflow: hidden
+  .icon
+    float: left
+    width: 24px
+    height: 24px
+    background-image: url(/assets/content-types.png)
+  .text
+    float: left
+    color: $medgray
+    font-size: 14px
+    font-weight 400
+    line-height: 12px
+    padding: 6px
+    text-transform: capitalize
+  &.context
+    .icon
+      background-position: -144px -1056px
+  &.good-practices
+    .icon
+      background-position: -120px -1056px
+  &.tools
+    .icon
+      background-position: -96px -1056px
+  &.case-studies
+    .icon
+      background-position: -72px -1056px
+  &.resources
+    .icon
+      background-position: -48px -1056px
+  &.webinars
+    .icon
+      background-position: -24px -1056px
+.expansion.single
+
+  min-height: 721px
+  position: static
+  margin-bottom: 100px
+
+.h-div
+  position: absolute
+  right: 0
+  top: 78px
+  background: white
+  height: 145px
+
+  &:before
+    content: ''
+    height: 6px
+
+    position: absolute
+    right: 26px
+    top: -6px
+    background: url(/assets/h-lines.png)
+  .mCSB_scrollTools
+    .mCSB_draggerRail
+      background: #ededed
+      width: 10px
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+    .mCSB_dragger
+      background: url(/assets/hscroll.png) center bottom no-repeat
+      width: 15px
+    .mCSB_dragger:hover .mCSB_dragger_bar,
+    .mCSB_dragger_bar,
+    .mCSB_dragger_bar:hover
+      background: transparent
+.h-list
+  li
+    margin-bottom: 10px
+  span
+    text-transform: capitalize
+    &.how-change-happens
+      color: #26ba95
+    &.education
+      color: #128ab5
+    &.gender-equality
+      color: #b5c41d
+    &.monitoring-and-evaluation
+      color: #d39a0d
+    &.partnership-and-collaboration
+      color: #d3620d
+    &.policy
+      color: #be0055
+    &.youth-engagement
+      color: #8f0879
+    &.context, &.good-practices, &.tools, &.case-studies, &.resources, &.webinars
+      color: $medgray
+.img-caption
+  color: white
+.mCustomScrollBox>.mCSB_scrollTools
+  right: 5px
+.arrangeBy
+  text-decoration: underline
+  cursor: pointer
+.item-hover
+  display: none
+  position: absolute
+  top: 4px
+  bottom: 4px
+  left: 4px
+  right: 4px
+  z-index: 2
+  color: white
+  overflow: hidden
+  img
+    display: inline-block
+  .item-header
+    padding: 0 25px 8px 15px
+    height: auto
+    z-index: 2
+    width: 100%
+    border-bottom: 1px solid #fff
+    .header-icon
+      height: 24px
+      width: 24px
+      float: right
+      margin-right: -20px
+      margin-top: 8px
+      background-image: url(/assets/content-types.png)
+    h3
+      text-align: left
+      line-height: 1.2
+      padding-top: 8px
+      font-size: 19px
+      color: white
+      margin: 0
+  .item-text
+    color: white
+    padding: 0 20px 20px
+    height: 100%
+    p
+      font-size: 18px
+      line-height: 24px
+      font-family: Roboto
+      font-weight: 400
+    a
+      color: white
+      text-decoration: underline !important
+  .item-excerpt
+    padding: 20px
+    color: white
+    a
+      color: white
+  .item-footer
+    height: 45px
+    border-top: 1px solid #fff
+    position: absolute
+    bottom: 0
+    width: 100%
+    .social
+      float: left
+      .twitter
+        float: left
+        padding: 10px 4px
+        a
+          display: block
+          height: 24px
+          width: 24px
+          background-image: url(/assets/twitter-sprite.png)
+        &.how-change-happens
+          a
+            background-position: 0px -144px
+        &.education
+          a
+            background-position: 0px -120px
+        &.gender-equality
+          a
+            background-position: 0px -96px
+        &.monitoring-and-evaluation
+          a
+            background-position: 0px -72px
+        &.partnership-and-collaboration
+          a
+            background-position: 0px -48px
+        &.policy
+          a
+            background-position: 0px -24px
+        &.youth-engagement
+          a
+            background-position: 0px 0px
+      .facebook
+        float: left
+        padding: 10px 4px
+        a
+          display: block
+          height: 24px
+          width: 24px
+          background-image: url(/assets/fb-sprite.png)
+        &.how-change-happens
+          a
+            background-position: 0px -144px
+        &.education
+          a
+            background-position: 0px -120px
+        &.gender-equality
+          a
+            background-position: 0px -96px
+        &.monitoring-and-evaluation
+          a
+            background-position: 0px -72px
+        &.partnership-and-collaboration
+          a
+            background-position: 0px -48px
+        &.policy
+          a
+            background-position: 0px -24px
+        &.youth-engagement
+          a
+            background-position: 0px 0px
+    .actions
+      float: right
+      .plus
+        padding: 10px 4px
+        a
+          display: block
+          height: 24px
+          width: 24px
+          background-image: url(/assets/plus-sprite.png)
+        &.how-change-happens
+          a
+            background-position: 0px -144px
+        &.education
+          a
+            background-position: 0px -120px
+        &.gender-equality
+          a
+            background-position: 0px -96px
+        &.monitoring-and-evaluation
+          a
+            background-position: 0px -72px
+        &.partnership-and-collaboration
+          a
+            background-position: 0px -48px
+        &.policy
+          a
+            background-position: 0px -24px
+        &.youth-engagement
+          a
+            background-position: 0px 0px
+.item:hover
+  .item-hover
+    display: block
+.container
+  width: auto
+  min-width: 0 !important
+.hub-pdf
+  float: right
+  a
+    display: block
+    height: 24px
+    width: auto
+    background-image: url(/assets/dl-sprite.png)
+    background-repeat: no-repeat
+    padding-right: 34px
+    font-weight: 300
+    padding-top: 3px
+    margin-top: 0px
+    color: black
+  &.how-change-happens
+    a
+      background-position: 147px -144px
+  &.education
+    a
+      background-position: 147px -120px
+  &.gender-equality
+    a
+      background-position: 147px -96px
+  &.monitoring-and-evaluation
+    a
+      background-position: 147px -72px
+  &.partnership-and-collaboration
+    a
+      background-position: 147px -48px
+  &.policy
+    a
+      background-position: 147px -24px
+  &.youth-engagement
+    a
+      background-position: 147px 0px
+table
+  border-collapse: collapse !important
+ 
+table th,
+table td
+  border: 1px solid #ddd !important
+table 
+  width: 100%
+  margin-bottom: 20px
+
+table thead > tr > th,
+table tbody > tr > th,
+table tfoot > tr > th,
+table thead > tr > td,
+table tbody > tr > td,
+table tfoot > tr > td 
+  padding: 8px
+  line-height: 1.428571429
+  vertical-align: top
+  border-top: 1px solid #dddddd
+
+table thead > tr > th
+  vertical-align: bottom
+  border-bottom: 2px solid #dddddd
+
+table caption + thead tr:first-child th,
+table colgroup + thead tr:first-child th,
+table thead:first-child tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child td
+  border-top: 0
+
+table tbody + tbody
+  border-top: 2px solid #dddddd
+
+table table
+
+table
+  border: 1px solid #dddddd
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td
+  border: 1px solid #dddddd
+
+table > thead > tr > th,
+table > thead > tr > td
+  border-bottom-width: 2px
+
+table col[class*="col-"]
+  display: table-column
+  float: none
+
+table td[class*="col-"],
+table th[class*="col-"]
+  display: table-cell
+  float: none
+
+table > thead > tr > td.active,
+table > tbody > tr > td.active,
+table > tfoot > tr > td.active,
+table > thead > tr > th.active,
+table > tbody > tr > th.active,
+table > tfoot > tr > th.active,
+table > thead > tr.active > td,
+table > tbody > tr.active > td,
+table > tfoot > tr.active > td,
+table > thead > tr.active > th,
+table > tbody > tr.active > th,
+table > tfoot > tr.active > th 
+
+table > thead > tr > td.success,
+table > tbody > tr > td.success,
+table > tfoot > tr > td.success,
+table > thead > tr > th.success,
+table > tbody > tr > th.success,
+table > tfoot > tr > th.success,
+table > thead > tr.success > td,
+table > tbody > tr.success > td,
+table > tfoot > tr.success > td,
+table > thead > tr.success > th,
+table > tbody > tr.success > th,
+table > tfoot > tr.success > th
+  border-color: #d6e9c6
+
+table > thead > tr > td.danger,
+table > tbody > tr > td.danger,
+table > tfoot > tr > td.danger,
+table > thead > tr > th.danger,
+table > tbody > tr > th.danger,
+table > tfoot > tr > th.danger,
+table > thead > tr.danger > td,
+table > tbody > tr.danger > td,
+table > tfoot > tr.danger > td,
+table > thead > tr.danger > th,
+table > tbody > tr.danger > th,
+table > tfoot > tr.danger > th
+  border-color: #eed3d7
+
+table > thead > tr > td.warning,
+table > tbody > tr > td.warning,
+table > tfoot > tr > td.warning,
+table > thead > tr > th.warning,
+table > tbody > tr > th.warning,
+table > tfoot > tr > th.warning,
+table > thead > tr.warning > td,
+table > tbody > tr.warning > td,
+table > tfoot > tr.warning > td,
+table > thead > tr.warning > th,
+table > tbody > tr.warning > th,
+table > tfoot > tr.warning > th 
+  border-color: #fbeed5
+.img-caption
+  margin-bottom: 20px
+.direct-link
+  padding: 10px 4px
+  float: left
+  a
+    display: block
+    height: 24px
+    width: 24px
+    background-image: url(/assets/direct-link-sprite.png)
+  &.how-change-happens
+    a
+      background-position: 0px -144px
+  &.education
+    a
+      background-position: 0px -120px
+  &.gender-equality
+    a
+      background-position: 0px -96px
+  &.monitoring-and-evaluation
+    a
+      background-position: 0px -72px
+  &.partnership-and-collaboration
+    a
+      background-position: 0px -48px
+  &.policy
+    a
+      background-position: 0px -24px
+  &.youth-engagement
+    a
+      background-position: 0px 0px

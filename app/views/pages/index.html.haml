@@ -1,0 +1,113 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+            
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .photo
+            .main-text
+              %h1.main
+                .en
+                  The Global Hive:
+                  Tools for engaging
+                  global citizens
+                .fr
+                  La Ruche mondiale: Outils d’engagement pour citoyens du monde
+            .sub-text
+              %h2.sub
+                .en
+                  Click on one or more of the tabs
+                  above this image to begin exploring.
+                .fr
+                  Cliquer sur un ou plusieurs des onglets au-dessus de l’illustration pour lancer votre exploration.
+      .row
+        .col-lg-12
+          .panels
+            - if @featureditems.blank?
+              .panel
+                = link_to "view items", items_path
+              .panel
+                = link_to "view items", items_path
+            - else
+              - @featureditems.each_with_index do |f, i|
+                .panel.featured-item-panel
+                  %a.story-link{href: "/module/#{f.id.to_s}", data: {htitle: f.title}}
+                    .category-panel.feature-spot{class: "featured-panel-#{i} #{f.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+                      .panel-header
+                        %h3.regular
+                          .en
+                            = f.feature_title.blank? ? "Feature Spot #{i == 0 ? "1" : "2"}" : f.feature_title
+                          .fr
+                            = f.feature_title_french.blank? ? "En vedette #{i == 0 ? "1" : "2"}" : f.feature_title_french
+                      .category-image
+                        .category-header{style: "background-color: #{to_rgba(f.panel.color, "6")}"}
+                          %h3.light
+                            .en
+                              = f.title
+                            .fr
+                              = f.title_french
+                        = image_tag(f.item_attachments.blank? ? "/assets/empty.png" : f.item_attachments.last.item_image.url(:featured))
+                    - if user_signed_in?
+                      - if current_user.admin?
+                        .edit
+                          = link_to "edit", edit_item_path(f)
+            .panel
+              .item-panel.homepage-blog-feed
+                .panel-header
+                  %h3
+                    .en
+                      What's New?
+                    .fr
+                      Quoi de neuf?
+                .items.blog-items
+                  %ul.unstyled
+                    - @posts.each do |p|
+                      %li
+                        %a{href: "/news/#{p.title.gsub(" ", "%20")}"}
+                          %h4
+                            .en
+                              = "<span class='title'>#{p.title}</span> <span class='date'>#{p.created_at.strftime("%m.%d.%y")}</span>".html_safe
+                            .fr
+                              = "<span class='title'>#{p.title_french}</span> <span class='date'>#{p.created_at.strftime("%m.%d.%y")}</span>".html_safe
+                          .en
+                            = p.body.blank? ? "" : p.body.gsub(/\{(.*)\}/, "").truncate_html(98, at_end = "&hellip;").html_safe
+                          .fr
+                            = p.body_french.blank? ? "" : p.body_french.gsub(/\{(.*)\}/, "").truncate_html(98, at_end = "&hellip;").html_safe
+                        - if user_signed_in?
+                          - if current_user.admin?
+                            .edit
+                              = link_to "edit", edit_post_path(p)
+
+= render partial: "layouts/footer"
+                    
+
+-#
+  .container
+    .row
+      .col-lg-6
+        .row
+          .col-lg-3.col-offset-3
+            .form
+              = simple_form_for @message, :url => email_path do |f|
+                .form-group
+                  = label_tag "From"
+                  = text_field_tag "from"
+                .form-group
+                  = label_tag "email", "To"
+                  = text_field_tag :email
+                .form-group
+                  = label_tag "Subject"
+                  = text_field_tag "subject"
+                .form-group
+                  = f.input :body, :as => "text", :label => "Message"
+                .form-group
+                  = f.button :submit, "Submit"
+      .col-lg-6
+        .example
+          = content("Example", "%h1")
+      

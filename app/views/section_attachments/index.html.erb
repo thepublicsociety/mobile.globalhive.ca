@@ -1,0 +1,21 @@
+<h1>Listing section_attachments</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @section_attachments.each do |section_attachment| %>
+  <tr>
+    <td><%= link_to 'Show', section_attachment %></td>
+    <td><%= link_to 'Edit', edit_section_attachment_path(section_attachment) %></td>
+    <td><%= link_to 'Destroy', section_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Section attachment', new_section_attachment_path %>

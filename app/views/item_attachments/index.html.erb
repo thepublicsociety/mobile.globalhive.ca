@@ -1,0 +1,23 @@
+<h1>Listing item_attachments</h1>
+
+<table>
+  <tr>
+    <th>Caption</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @item_attachments.each do |item_attachment| %>
+  <tr>
+    <td><%= item_attachment.caption %></td>
+    <td><%= link_to 'Show', item_attachment %></td>
+    <td><%= link_to 'Edit', edit_item_attachment_path(item_attachment) %></td>
+    <td><%= link_to 'Destroy', item_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item attachment', new_item_attachment_path %>

@@ -1,0 +1,41 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: thisPage}
+            .page-rect
+              %h1
+                .en
+                  = link_to "News", news_path
+                .fr
+                  = link_to "Nouvelles", news_path
+            %article.post-display
+              %header
+                %h1
+                  .en
+                    = @post.title
+                  .fr
+                    = @post.title_french.blank? ? "" : @post.title_french.html_safe
+                .post-meta
+                  %span.auth
+                    = @post.author
+                  \|
+                  %span
+                    = date_string(@post.created_at)
+              %section.body.cf
+                - unless @post.body.blank?
+                  .en
+                    = @post.body.gsub(/\{(.*)\}/){ "<image src=#{PostAttachment.find_by_caption($1).blank? ? "" : PostAttachment.find_by_caption($1).post_image.url}" }.html_safe
+                  .fr
+                    = @post.body_french.blank? ? "" : @post.body_french.gsub(/\{(.*)\}/){ "<image src=#{PostAttachment.find_by_caption($1).blank? ? "" : PostAttachment.find_by_caption($1).post_image.url}" }.html_safe
+    
+            .post-listing
+              %ul.unstyled.the-posts
+                = render partial: "layouts/unpaged_posts"
+= render partial: "layouts/footer"

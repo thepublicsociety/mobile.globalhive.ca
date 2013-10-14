@@ -1,0 +1,31 @@
+<%= simple_nested_form_for(@section, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :title_french %>
+    <%= f.input :body %>
+    <%= f.input :body_french %>
+    <%= f.simple_fields_for :section_attachments do |a| %>
+      <%= a.input :section_upload %>
+      <%= a.input :label %>
+      <%= a.link_to_remove "remove", class: "btn btn-default btn-xs" %>
+      <div style="height: 25px"></div>
+    <% end %>
+    <div style="height: 10px"></div>
+    <%= f.link_to_add "Add Upload", :section_attachments, class: "btn btn-default btn-xs" %>
+    <div style="height: 25px"></div>
+    <h3>Available uploads</h3>
+    <ul class='unstyled'>
+      <% @section.section_attachments.each do |attach| %>
+        <li><%= link_to attach.section_upload.url, attach.section_upload.url %></li>
+      <% end %>
+    </ul>
+    <div style="height: 25px"></div>
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

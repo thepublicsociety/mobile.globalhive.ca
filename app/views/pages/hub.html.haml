@@ -1,0 +1,44 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      = render partial: "layouts/filters"  
+      .row
+        .col-lg-12
+          = render partial: "layouts/isotope"
+      .row
+        .col-lg-12
+          .page-contents{class: "#{thisPage} #{@panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+            .page-rect{style: "background: ##{@panel.color}"}
+              %h1
+                .en
+                  = @panel.name
+                .fr
+                  = @panel.name_french.html_safe
+            .hub-pdf{class: "#{@panel.name.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+              = link_to "Download the full PDF", "/hubs/#{@panel.name.downcase.gsub(/ /, "_").gsub("&", "and")}.pdf"
+            .hub-item-listing
+              - @panelitems.each do |item|
+                - unless item.body.blank?
+                  %article.panel-item{class: item.subcategory, id: item.id.to_s}
+                    %header.panel-item-header
+                      %h1
+                        .en
+                          = item.title
+                        .fr
+                          = item.title_french
+                      .item-sub{class: item.subcategory}
+                        .icon
+                        .text
+                          .en
+                            = item.subcategory.blank? ? "" : item.subcategory.gsub(/-/, " ").gsub("and", "&")
+                          .fr
+                            = item.subcategory_french.blank? ? "" : item.subcategory_french.gsub(/-/, " ").gsub("and", "&")
+                    %section.panel-item-content
+                      .en
+                        = item.body.blank? ? "" : item.body.html_safe
+                      .fr
+                        = item.body_french.blank? ? "" : item.body_french.html_safe
+                
+
+= render partial: "layouts/footer"

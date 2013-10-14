@@ -1,0 +1,68 @@
+.container
+  %header#header{class: thisPage}
+    .row
+      .col-lg-12
+        .flap{class: thisPage}
+          %a#logo{href: root_path}
+            = image_tag("/assets/small-logo.png")
+        .lang{class: thisPage}
+          = label_tag "eng"
+          = check_box_tag 'eng', 'Eng', true
+          %span
+            Eng
+          = label_tag "fra"
+          = check_box_tag 'fra', 'Fra'
+          %span
+            Fra
+        .clear
+        %ul.unstyled.nav
+          %li
+            %span.en
+              = link_to "Home", root_path, class: thisPage == "index" ? "on" : "not-on"
+            %span.fr
+              = link_to "Accueil", root_path, class: thisPage == "index" ? "on" : "not-on"
+          %li
+            %span.en
+              = link_to "News", news_path, class: thisPage == "news" ? "on" : "not-on"
+            %span.fr
+              = link_to "Nouvelles", news_path, class: thisPage == "news" ? "on" : "not-on"
+          %li
+            %span.en
+              = link_to "About", about_path, class: thisPage == "about" ? "on" : "not-on"
+            %span.fr
+              = link_to "&Agrave; propos".html_safe, about_path, class: thisPage == "about" ? "on" : "not-on"
+          %li
+            %span.en
+              = link_to "Contact", contact_path, class: thisPage == "contact" ? "on" : "not-on"
+            %span.fr
+              = link_to "Nous contacter", contact_path, class: thisPage == "contact" ? "on" : "not-on"
+          %li
+            %span.en
+              = link_to "Glossary", glossary_path, class: thisPage == "glossary" ? "on" : "not-on"
+            %span.fr
+              = link_to "Glossaire", glossary_path, class: thisPage == "glossary" ? "on" : "not-on"
+        .clear
+        .search
+          = form_tag("/search") do
+            = submit_tag "search"
+            = text_field_tag :query
+        -#
+          .help
+            %span.en
+              = link_to "HELP!", help_path
+            %span.fr
+              = link_to "AIDE", help_path
+        - if user_signed_in?
+          = link_if_admin(admin_path, "cms")
+        - else
+          = link_if_admin(login_path, "login")
+    .row
+      .col-lg-12
+        .header-lines{class: thisPage}
+          .lines
+          .pointer
+            %a.headerControl{href: "#", data: {page: thisPage}, class: (thisPage == "news" || thisPage == "about" || thisPage == "contact" || thisPage == "glossary" || thisPage == "news_story") ? "seeDash" : "seeHist"}
+              %span.en
+                = (thisPage == "news" || thisPage == "about" || thisPage == "contact" || thisPage == "glossary" || thisPage == "news_story") ? "See Discovery Dashboard" : "See your visit history"
+              %span.fr
+                = (thisPage == "news" || thisPage == "about" || thisPage == "contact" || thisPage == "glossary" || thisPage == "news_story") ? "Voir le Tableau de bord" : "Consulter l’historique de vos visites"

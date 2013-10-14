@@ -1,0 +1,57 @@
+%footer#footer
+  .off-state
+    .container
+      .row
+        .col-lg-12
+          .bar
+            .copy
+              .en
+                = "&copy; #{Time.now.strftime("%Y")} Global Hive".html_safe 
+              .fr
+                = "&copy; #{Time.now.strftime("%Y")} Ruche mondiale".html_safe 
+            %a.control.turnOn{href: "#"}
+              = image_tag("/assets/footer-arrows.png")
+    .on-state
+      .container
+        .row
+          .col-lg-12
+            .main-footer-nav
+              %ul.unstyled
+                %li
+                  %span.en
+                    = link_to "Home", root_path, class: controller.action_name == "index" ? "on" : "not-on"
+                  %span.fr
+                    = link_to "Accueil", root_path, class: controller.action_name == "index" ? "on" : "not-on"
+                -#
+                  %li
+                    = link_to "News", news_path, class: controller.action_name == "news" ? "on" : "not-on"
+                %li
+                  %span.en
+                    = link_to "About", about_path, class: controller.action_name == "about" ? "on" : "not-on"
+                  %span.fr
+                    = link_to "&Agrave; propos".html_safe, about_path, class: controller.action_name == "about" ? "on" : "not-on"
+                %li
+                  %span.en
+                    = link_to "Contact", contact_path, class: controller.action_name == "contact" ? "on" : "not-on"
+                  %span.fr
+                    = link_to "Nous contacter", contact_path, class: controller.action_name == "contact" ? "on" : "not-on"
+                %li
+                  %span.en
+                    = link_to "Glossary", glossary_path, class: controller.action_name == "glossary" ? "on" : "not-on"
+                  %span.fr
+                    = link_to "Glossaire", glossary_path, class: controller.action_name == "glossary" ? "on" : "not-on"
+            .sub-footer-nav
+              %ul.unstyled
+                - @categories.each do |p|
+                  %li
+                    %span.en
+                      = link_to p.name, "/hub/#{p.id.to_s}"
+                    %span.fr
+                      = link_to p.name_french.html_safe, "/hub/#{p.id.to_s}"
+            .intercouncil
+              .inter-logo
+                = link_to "", "#"
+              .inter-text.en
+                The Global Hive is an initiative of the Inter-Council Network of the Provincial and Regional Councils for International Cooperation
+              .inter-text.fr
+                La Ruche mondiale est une initiative du Réseau de coordination des conseils provinciaux et régionaux de coopération internationale.

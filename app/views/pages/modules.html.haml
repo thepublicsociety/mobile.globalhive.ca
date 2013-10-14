@@ -1,0 +1,27 @@
+#wrap
+  #main
+    = render :partial => "layouts/header"
+    .container
+      .row
+        .col-lg-12
+          %h1
+            .en
+              = @module.title
+            .fr
+              = @module.title_french.html_safe unless @module.title_french.blank?
+          .related
+            %h3
+              Related Modules
+            %ul
+              - @related.each do |m|
+                %li
+                  .en
+                    = link_to m.title, "/module/#{m.id.to_s}"
+                  .fr
+                    = link_to m.title_french.blank? ? "" : m.title_french.html_safe, "/module/#{m.id.to_s}"
+          .module-content
+            .en
+              = @module.body.html_safe unless @module.body.blank?
+            .fr
+              = @module.body_french.html_safe unless @module.body_french.blank?
+= render partial: "layouts/footer"

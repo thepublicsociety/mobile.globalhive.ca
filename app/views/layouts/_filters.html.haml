@@ -1,0 +1,95 @@
+.filter_container{class: controller.action_name}
+  .row
+    .col-lg-12
+      .cat-select
+        %ul.unstyled
+          - @categories.each do |c|
+            %li.catselect{style: "background: ##{c.color}"}
+              %a{href: "/hub/#{c.id.to_s}#content-table"}
+                .en
+                  .title
+                    = c.name
+                  .description
+                    %p
+                      -#
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                .fr
+                  .title
+                    = c.name_french.html_safe unless c.name_french.blank?
+                  .description
+                    %p
+                      -#
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              
+      -#
+        .cat-select
+          .en
+            = form_tag("/") do
+              = select_tag("cat", options_from_collection_for_select(@categories, 'id', 'name'), prompt: "Select Category")
+          .fr
+            = form_tag("/") do
+              = select_tag("cat", options_from_collection_for_select(@categories, 'id', 'name_french'), prompt: "Select Category")
+      - if thisPage == "hub"
+        #content-table
+          %h4
+            Table of Contents
+          %ul
+            - @panelitems.each do |i|
+              %li
+                .en
+                  = link_to i.title, "##{i.id.to_s}"
+                .fr
+                  = link_to i.title_french, "##{i.id.to_s}"
+      -#
+        .subcat-select
+          .en
+            = form_tag("/") do
+              = select_tag("subcat", options_from_collection_for_select(@subcategories, 'id', 'name'), prompt: "Select Subcategory")
+          .fr
+            = form_tag("/") do
+              = select_tag("subcat", options_from_collection_for_select(@subcategories, 'id', 'name_french'), prompt: "Select Subcategory")
+        .mod-results
+          %ul
+            - @items.each do |i|
+              %li{class: "#{i.panel.name.downcase.gsub(/ /, "-").gsub("&", "and")} #{i.subcategory.downcase.gsub(/ /, "-").gsub("&", "and")}"}
+                .en
+                  = link_to i.title, "/module/#{i.id.to_s}"
+                .fr
+                  = link_to i.title_french, "/module/#{i.id.to_s}"
+      
+  -#
+    .row
+      .col-lg-12
+        %ul.unstyled.polygons
+          - @categories.each do |c|
+            %li.polygon.category{class: c.name.downcase.gsub(/ /, "-").gsub("&", "and")}
+              .poly-image
+                %img{src: "/assets/gray-polygon.png"}
+              %a.cat.trackHist{href: "/explore", data: {track: "cat", category: c.name.downcase.gsub(/ /, "-").gsub("&", "and"), id: c.id.to_s, filter: c.name.downcase.gsub(/ /, "-").gsub("&", "and")}}
+                %span.en
+                  = c.name
+                %span.fr
+                  = c.name_french.html_safe
+          
+    .row
+      .col-lg-12
+        %ul.unstyled.content-types
+          %li.content-type.seeAll
+            %a.trackHist.sAll{href: "#", data: {track: "all"}}
+              .icon
+              .text
+                %span.en
+                  See all
+                %span.fr
+                  Voir la  suite
+          - @subcategories.each do |s|
+            %li.content-type.subcategory{class: s.value}
+              %a.subcat.trackHist{href: "/explore", data: {track: "subcat", subcategory: s.value, filter: s.value}}
+                .icon
+                .text
+                  %span.en
+                    = s.name
+                  %span.fr
+                    = s.name_french.html_safe
+              - unless s == @subcategories.last
+                .line

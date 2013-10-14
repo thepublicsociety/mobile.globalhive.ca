@@ -1,0 +1,10 @@
+<%= render :partial => "layouts/admin_header" %>
+<h1>Listing items</h1>
+
+<table class="table items-listing">
+<%= render :partial => "items" %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>

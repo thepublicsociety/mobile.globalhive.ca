@@ -1,0 +1,88 @@
+.navbar
+  %ul.nav.navbar-nav
+    %li.dropdown
+      %a.navbar-brand.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Global Hive
+        %b.caret
+      %ul.dropdown-menu    
+        %li
+          = link_to "Home", root_path, class: thisPage == "index" ? "on" : "not-on"
+        %li
+          = link_to "News", news_path, class: thisPage == "news" ? "on" : "not-on"
+        %li
+          = link_to "About", about_path, class: thisPage == "about" ? "on" : "not-on"
+        %li
+          = link_to "Contact", contact_path, class: thisPage == "contact" ? "on" : "not-on"
+        %li
+          = link_to "Glossary", glossary_path, class: thisPage == "glossary" ? "on" : "not-on"
+    %li
+      = link_to "Admin path", admin_path
+    -#
+      %li
+        = link_to "Page contents", contents_path
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Posts
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "List", posts_path
+        %li
+          = link_to "New", new_post_path
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Panels (categories)
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "List", panels_path
+        %li
+          = link_to "New", new_panel_path
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Items (modules)
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "List", items_path
+        %li
+          = link_to "New", new_item_path
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        About page sections
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "List", sections_path
+        %li
+          = link_to "New", new_section_path
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Glossary terms
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "List", terms_path
+        %li
+          = link_to "New", new_term_path
+    
+  %ul.nav.pull-right
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        %span.normal-text
+          Logged in as
+        %span#username
+          = current_user.blank? ? "Guest" : current_user.email
+        %b.caret
+      %ul.dropdown-menu
+        - if current_user
+          %li
+            %a{:class => "logout", :href => "/logout"}
+              Log out
+          %li
+            %a{:class => "logout", :href => administration_account_settings_path}
+              Settings
+        - else
+          %li
+            %a{:class => "logout", :href => "/login"}
+              Log in
